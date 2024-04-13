@@ -14,12 +14,13 @@
 			<div class="col-md-4 offset-md-4">
 				<div class="card">
 					<div class="card-body">
-					<h3 class="text-center">Login</h3>
+						<h3 class="text-center">Login</h3>
 						<form action="login" method="post">
 							<div class="mb-3">
 								<label for="exampleInputEmail1" class="form-label">Email
 									address</label> <input type="email" class="form-control"
-									id="exampleInputEmail1" aria-describedby="emailHelp" required="required" name="email">
+									id="exampleInputEmail1" aria-describedby="emailHelp"
+									required="required" name="email">
 
 							</div>
 							<div class="mb-3">
@@ -27,10 +28,11 @@
 								<input type="password" class="form-control"
 									id="exampleInputPassword1" required="required" name="password">
 							</div>
-							
+
 							<div class="text-center">
-								<button type="submit" class="btn btn-primary"> Login</button><br><br>
-								<a href= "register.jsp">Create Account</a>
+								<button type="submit" class="btn btn-primary">Login</button>
+								<br>
+								<br> <a href="register.jsp">Create Account</a>
 							</div>
 						</form>
 					</div>
@@ -38,6 +40,6 @@
 			</div>
 		</div>
 	</div>
-	<%@include file="all_component/footer.jsp" %>
+	<%@include file="all_component/footer.jsp"%>
 </body>
 </html>
