@@ -28,6 +28,8 @@ public class LoginServlet extends HttpServlet
 			
 			if("dave@gmail.com".equals(email) && "Dave@123".equals(password))
 			{
+				User us = new User();
+				session.setAttribute("userobj", us);
 				resp.sendRedirect("admin/home.jsp");
 			}
 			else
