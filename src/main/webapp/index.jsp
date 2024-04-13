@@ -35,9 +35,6 @@
 		<h1 class="text-center text-white heading"><i class="fa-solid fa-book"></i> E-Book Management System</h1>
 	</div>
 
-  
-
-
 	<!-- Start Recent Book -->
 	<div class="container">
 		<h3 class="text-center">Recent Book</h3>
@@ -109,8 +106,8 @@
 					</div>
 				</div>
 			</div>
-
 		</div>
+		
 		<div class="text-center mt-2">
 			<a href="" class="btn btn-danger btn-sm">View All</a>
 		</div>
