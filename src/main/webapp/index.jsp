@@ -15,23 +15,28 @@
 	background-repeat: no-repeat;
 }
 
-.heading {
-	font-size: 60px;
-	position: absolute; /* Position the text absolutely */
-	top: 29%; /* Place the text vertically centered */
-	left: 46%; /* Place the text horizontally centered */
-	transform: translate(-50%, -50%); /* Center the text precisely */
-	white-space: nowrap;
+.card:hover .card-body {
+	background-color: #f7f7f7;
 }
+
+.heading {
+           font-size: 60px;
+           position: absolute; /* Position the text absolutely */
+            top: 29%; /* Place the text vertically centered */
+            left: 46%; /* Place the text horizontally centered */
+            transform: translate(-50%, -50%); /* Center the text precisely */
+             white-space: nowrap;
+        }
 </style>
 </head>
-<body>
+<body style="background-color: #f7f7f7;">
 	<%@include file="all_component/navbar.jsp"%>
 	<div class="container-fluid back-img">
-		<h1 class="text-center text-white heading">
-			<i class="fa-solid fa-book"></i> E-Book Management System
-		</h1>
+		<h1 class="text-center text-white heading"><i class="fa-solid fa-book"></i> E-Book Management System</h1>
 	</div>
+
+  
+
 
 	<!-- Start Recent Book -->
 	<div class="container">
@@ -46,10 +51,9 @@
 						<p>Shimpy Goyal</p>
 						<p>Categories:New</p>
 						<div class="button-container">
-							<a href="" class="btn btn-danger btn-sm ml-1"><i
-								class="fa-solid fa-cart-shopping"></i> Add Cart</a> <a href=""
-								class="btn btn-success btn-sm ml-1">View Details</a> <a href=""
-								class="btn btn-danger btn-sm ml-1">299</a>
+							<a href="" class="btn btn-danger btn-sm ml-1"><i class="fa-solid fa-cart-shopping"></i> Add Cart</a> <a
+								href="" class="btn btn-success btn-sm ml-1">View Details</a> <a
+								href="" class="btn btn-danger btn-sm ml-1">299</a>
 						</div>
 					</div>
 				</div>
@@ -64,10 +68,9 @@
 						<p>Shimpy Goyal</p>
 						<p>Categories:New</p>
 						<div class="button-container">
-							<a href="" class="btn btn-danger btn-sm ml-1"><i
-								class="fa-solid fa-cart-shopping"></i> Add Cart</a> <a href=""
-								class="btn btn-success btn-sm ml-1">View Details</a> <a href=""
-								class="btn btn-danger btn-sm ml-1">299</a>
+							<a href="" class="btn btn-danger btn-sm ml-1"><i class="fa-solid fa-cart-shopping"></i> Add Cart</a> <a
+								href="" class="btn btn-success btn-sm ml-1">View Details</a> <a
+								href="" class="btn btn-danger btn-sm ml-1">299</a>
 						</div>
 					</div>
 				</div>
@@ -82,10 +85,9 @@
 						<p>Shimpy Goyal</p>
 						<p>Categories:New</p>
 						<div class="button-container">
-							<a href="" class="btn btn-danger btn-sm ml-1"><i
-								class="fa-solid fa-cart-shopping"></i> Add Cart</a> <a href=""
-								class="btn btn-success btn-sm ml-1">View Details</a> <a href=""
-								class="btn btn-danger btn-sm ml-1">299</a>
+							<a href="" class="btn btn-danger btn-sm ml-1"><i class="fa-solid fa-cart-shopping"></i> Add Cart</a> <a
+								href="" class="btn btn-success btn-sm ml-1">View Details</a> <a
+								href="" class="btn btn-danger btn-sm ml-1">299</a>
 						</div>
 					</div>
 				</div>
@@ -100,10 +102,9 @@
 						<p>Shimpy Goyal</p>
 						<p>Categories:New</p>
 						<div class="button-container">
-							<a href="" class="btn btn-danger btn-sm ml-1"><i
-								class="fa-solid fa-cart-shopping"></i> Add Cart</a> <a href=""
-								class="btn btn-success btn-sm ml-1">View Details</a> <a href=""
-								class="btn btn-danger btn-sm ml-1">299</a>
+							<a href="" class="btn btn-danger btn-sm ml-1"><i class="fa-solid fa-cart-shopping"></i> Add Cart</a> <a
+								href="" class="btn btn-success btn-sm ml-1">View Details</a> <a
+								href="" class="btn btn-danger btn-sm ml-1">299</a>
 						</div>
 					</div>
 				</div>
@@ -115,10 +116,10 @@
 		</div>
 	</div>
 	<!-- End Recent Book -->
-
+	
 	<hr>
-
-	<!-- Start New Book -->
+	
+		<!-- Start New Book -->
 	<div class="container">
 		<h3 class="text-center">New Book</h3>
 		<div class="row">
@@ -131,10 +132,9 @@
 						<p>Shimpy Goyal</p>
 						<p>Categories:New</p>
 						<div class="button-container">
-							<a href="" class="btn btn-danger btn-sm ml-1"><i
-								class="fa-solid fa-cart-shopping"></i> Add Cart</a> <a href=""
-								class="btn btn-success btn-sm ml-1">View Details</a> <a href=""
-								class="btn btn-danger btn-sm ml-1">299</a>
+							<a href="" class="btn btn-danger btn-sm ml-1"><i class="fa-solid fa-cart-shopping"></i> Add Cart</a> <a
+								href="" class="btn btn-success btn-sm ml-1">View Details</a> <a
+								href="" class="btn btn-danger btn-sm ml-1">299</a>
 						</div>
 					</div>
 				</div>
@@ -149,10 +149,9 @@
 						<p>Shimpy Goyal</p>
 						<p>Categories:New</p>
 						<div class="button-container">
-							<a href="" class="btn btn-danger btn-sm ml-1"><i
-								class="fa-solid fa-cart-shopping"></i> Add Cart</a> <a href=""
-								class="btn btn-success btn-sm ml-1">View Details</a> <a href=""
-								class="btn btn-danger btn-sm ml-1">299</a>
+							<a href="" class="btn btn-danger btn-sm ml-1"><i class="fa-solid fa-cart-shopping"></i> Add Cart</a> <a
+								href="" class="btn btn-success btn-sm ml-1">View Details</a> <a
+								href="" class="btn btn-danger btn-sm ml-1">299</a>
 						</div>
 					</div>
 				</div>
@@ -167,10 +166,9 @@
 						<p>Shimpy Goyal</p>
 						<p>Categories:New</p>
 						<div class="button-container">
-							<a href="" class="btn btn-danger btn-sm ml-1"><i
-								class="fa-solid fa-cart-shopping"></i> Add Cart</a> <a href=""
-								class="btn btn-success btn-sm ml-1">View Details</a> <a href=""
-								class="btn btn-danger btn-sm ml-1">299</a>
+							<a href="" class="btn btn-danger btn-sm ml-1"><i class="fa-solid fa-cart-shopping"></i> Add Cart</a> <a
+								href="" class="btn btn-success btn-sm ml-1">View Details</a> <a
+								href="" class="btn btn-danger btn-sm ml-1">299</a>
 						</div>
 					</div>
 				</div>
@@ -185,10 +183,9 @@
 						<p>Shimpy Goyal</p>
 						<p>Categories:New</p>
 						<div class="button-container">
-							<a href="" class="btn btn-danger btn-sm ml-1"><i
-								class="fa-solid fa-cart-shopping"></i> Add Cart</a> <a href=""
-								class="btn btn-success btn-sm ml-1">View Details</a> <a href=""
-								class="btn btn-danger btn-sm ml-1">299</a>
+							<a href="" class="btn btn-danger btn-sm ml-1"><i class="fa-solid fa-cart-shopping"></i> Add Cart</a> <a
+								href="" class="btn btn-success btn-sm ml-1">View Details</a> <a
+								href="" class="btn btn-danger btn-sm ml-1">299</a>
 						</div>
 					</div>
 				</div>
@@ -200,10 +197,10 @@
 		</div>
 	</div>
 	<!-- End New Book -->
-
+	
 	<hr>
-
-	<!-- Start Old Book -->
+	
+		<!-- Start Old Book -->
 	<div class="container">
 		<h3 class="text-center">Old Book</h3>
 		<div class="row">
@@ -216,8 +213,8 @@
 						<p>Shimpy Goyal</p>
 						<p>Categories:New</p>
 						<div class="button-container">
-							<a href="" class="btn btn-success btn-sm ml-1">View Details</a> <a
-								href="" class="btn btn-danger btn-sm ml-1">299</a>
+							 <a href="" class="btn btn-success btn-sm ml-1">View Details</a> 
+							 <a	href="" class="btn btn-danger btn-sm ml-1">299</a>
 						</div>
 					</div>
 				</div>
@@ -232,8 +229,8 @@
 						<p>Shimpy Goyal</p>
 						<p>Categories:New</p>
 						<div class="button-container">
-							<a href="" class="btn btn-success btn-sm ml-1">View Details</a> <a
-								href="" class="btn btn-danger btn-sm ml-1">299</a>
+							 <a href="" class="btn btn-success btn-sm ml-1">View Details</a> 
+							 <a	href="" class="btn btn-danger btn-sm ml-1">299</a>
 						</div>
 					</div>
 				</div>
@@ -248,8 +245,8 @@
 						<p>Shimpy Goyal</p>
 						<p>Categories:New</p>
 						<div class="button-container">
-							<a href="" class="btn btn-success btn-sm ml-1">View Details</a> <a
-								href="" class="btn btn-danger btn-sm ml-1">299</a>
+							 <a href="" class="btn btn-success btn-sm ml-1">View Details</a> 
+							 <a	href="" class="btn btn-danger btn-sm ml-1">299</a>
 						</div>
 					</div>
 				</div>
@@ -264,8 +261,8 @@
 						<p>Shimpy Goyal</p>
 						<p>Categories:New</p>
 						<div class="button-container">
-							<a href="" class="btn btn-success btn-sm ml-1">View Details</a> <a
-								href="" class="btn btn-danger btn-sm ml-1">299</a>
+							 <a href="" class="btn btn-success btn-sm ml-1">View Details</a> 
+							 <a	href="" class="btn btn-danger btn-sm ml-1">299</a>
 						</div>
 					</div>
 				</div>
@@ -277,8 +274,7 @@
 		</div>
 	</div>
 	<!-- End Old Book -->
-
-
-
+	
+<%@include file="all_component/footer.jsp" %>
 </body>
 </html>
