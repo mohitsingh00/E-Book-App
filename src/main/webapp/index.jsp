@@ -32,10 +32,95 @@
 			<i class="fa-solid fa-book"></i> E-Book Management System
 		</h1>
 	</div>
-	
+
 	<!-- Start Recent Book -->
 	<div class="container">
 		<h3 class="text-center">Recent Book</h3>
+		<div class="row">
+			<div class="col-md-3">
+				<div class="card">
+					<div class="card-body text-center">
+						<img alt="" src="books/C.jpg" style="width: 150px; height: 200px"
+							class="img-thumblin">
+						<p>C Programming</p>
+						<p>Shimpy Goyal</p>
+						<p>Categories:New</p>
+						<div class="button-container">
+							<a href="" class="btn btn-danger btn-sm ml-1"><i
+								class="fa-solid fa-cart-shopping"></i> Add Cart</a> <a href=""
+								class="btn btn-success btn-sm ml-1">View Details</a> <a href=""
+								class="btn btn-danger btn-sm ml-1">299</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-3">
+				<div class="card">
+					<div class="card-body text-center">
+						<img alt="" src="books/C.jpg" style="width: 150px; height: 200px"
+							class="img-thumblin">
+						<p>C Programming</p>
+						<p>Shimpy Goyal</p>
+						<p>Categories:New</p>
+						<div class="button-container">
+							<a href="" class="btn btn-danger btn-sm ml-1"><i
+								class="fa-solid fa-cart-shopping"></i> Add Cart</a> <a href=""
+								class="btn btn-success btn-sm ml-1">View Details</a> <a href=""
+								class="btn btn-danger btn-sm ml-1">299</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-3">
+				<div class="card">
+					<div class="card-body text-center">
+						<img alt="" src="books/C.jpg" style="width: 150px; height: 200px"
+							class="img-thumblin">
+						<p>C Programming</p>
+						<p>Shimpy Goyal</p>
+						<p>Categories:New</p>
+						<div class="button-container">
+							<a href="" class="btn btn-danger btn-sm ml-1"><i
+								class="fa-solid fa-cart-shopping"></i> Add Cart</a> <a href=""
+								class="btn btn-success btn-sm ml-1">View Details</a> <a href=""
+								class="btn btn-danger btn-sm ml-1">299</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-3">
+				<div class="card">
+					<div class="card-body text-center">
+						<img alt="" src="books/C.jpg" style="width: 150px; height: 200px"
+							class="img-thumblin">
+						<p>C Programming</p>
+						<p>Shimpy Goyal</p>
+						<p>Categories:New</p>
+						<div class="button-container">
+							<a href="" class="btn btn-danger btn-sm ml-1"><i
+								class="fa-solid fa-cart-shopping"></i> Add Cart</a> <a href=""
+								class="btn btn-success btn-sm ml-1">View Details</a> <a href=""
+								class="btn btn-danger btn-sm ml-1">299</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+		<div class="text-center mt-2">
+			<a href="" class="btn btn-danger btn-sm">View All</a>
+		</div>
+	</div>
+	<!-- End Recent Book -->
+
+<hr>
+
+		<!-- Start New Book -->
+	<div class="container">
+		<h3 class="text-center">New Book</h3>
 		<div class="row">
 			<div class="col-md-3">
 				<div class="card">
@@ -110,9 +195,9 @@
 			<a href="" class="btn btn-danger btn-sm">View All</a>
 		</div>
 	</div>
-	<!-- End Recent Book -->
-
-
+	<!-- End New Book -->
+	
+	<hr>
 
 
 
