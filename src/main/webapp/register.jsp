@@ -17,8 +17,6 @@
 					<div class="card-body">
 						<h4 class="text-center">Registration Page</h4>
 
-						
-
 						<form action="register" method="post">
 							<div class="mb-3">
 								<label for="exampleInputName" class="form-label">Name</label> <input
