@@ -17,8 +17,6 @@
 				<div class="card">
 					<div class="card-body">
 						<h3 class="text-center">Login</h3>
-						
-						
 
 						<c:if test="${not empty failedMsg }">
 							<p class="text-center text-danger">${failedMsg }</p>

@@ -1,9 +1,11 @@
 package com.user.servlet;
 
 import java.io.IOException;
+
 import com.DAO.UserDAOImpl;
 import com.DB.DBConnect;
 import com.entity.User;
+
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -26,7 +28,7 @@ public class LoginServlet extends HttpServlet
 			String email = req.getParameter("email");
 			String password = req.getParameter("password");
 			
-			if("dave@gmail.com".equals(email) && "Dave@123".equals(password))
+			if("admin@gmail.com".equals(email) && "admin@123".equals(password))
 			{
 				User us = new User();
 				session.setAttribute("userobj", us);
@@ -43,10 +45,9 @@ public class LoginServlet extends HttpServlet
 				else
 				{
 					session.setAttribute("failedMsg", "Invalid Email and Password");
-					resp.sendRedirect("home.jsp");
+					resp.sendRedirect("login.jsp");
 				}
 				resp.sendRedirect("home.jsp");
-
 			}
 		} 
 		catch (Exception e) 
