@@ -33,7 +33,7 @@ public class BooksDAOImpl implements BooksDAO {
 			ps.setString(7, b.getEmail());
 			
 			int i = ps.executeUpdate();
-			if(i == 1)
+			if(i > 0)
 			{
 				f = true;
 			}
@@ -43,7 +43,7 @@ public class BooksDAOImpl implements BooksDAO {
 		{
 			e.printStackTrace();
 		}
-		return false;
+		return f;
 	}
 
 }

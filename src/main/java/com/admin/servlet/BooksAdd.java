@@ -32,7 +32,7 @@ public class BooksAdd extends HttpServlet {
 			Part part = req.getPart("bimg");
 			String fileName = part.getSubmittedFileName();
 			
-			Books b = new Books(bookName,author,price,category,status,fileName,"admin");
+			Books b = new Books(bookName, author, price, category, status, fileName, "admin");
 			BooksDAOImpl dao =  new BooksDAOImpl(DBConnect.getCon());
 			boolean f = dao.addBooks(b);
 			HttpSession session = req.getSession();
