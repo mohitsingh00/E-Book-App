@@ -1,5 +1,6 @@
 package com.admin.servlet;
 
+import java.io.File;
 import java.io.IOException;
 
 import com.DAO.BooksDAOImpl;
@@ -20,10 +21,8 @@ import jakarta.servlet.http.Part;
 public class BooksAdd extends HttpServlet {
 
 	@Override
-	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException 
-	{
-		try
-		{
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		try {
 			String bookName = req.getParameter("bname");
 			String author = req.getParameter("author");
 			String price = (req.getParameter("price"));
@@ -31,29 +30,29 @@ public class BooksAdd extends HttpServlet {
 			String status = req.getParameter("bstatus");
 			Part part = req.getPart("bimg");
 			String fileName = part.getSubmittedFileName();
-			
+
 			Books b = new Books(bookName, author, price, category, status, fileName, "admin");
-			BooksDAOImpl dao =  new BooksDAOImpl(DBConnect.getCon());
+			BooksDAOImpl dao = new BooksDAOImpl(DBConnect.getCon());
+
 			boolean f = dao.addBooks(b);
 			HttpSession session = req.getSession();
-			if(f)
+			if (f) 
 			{
+				String path = getServletContext().getRealPath("") + "books";
+				File file = new File(path);
+				part.write(path + File.separator + fileName);
 				session.setAttribute("succMsg", "Book Add Successfully");
 				resp.sendRedirect("admin/add_books.jsp");
-			}
-			else
+			} 
+			else 
 			{
 				session.setAttribute("failedMsg", "Something went wrong");
 				resp.sendRedirect("admin/add_books.jsp");
 			}
-		}
-		catch (Exception e) 
+		} 
+		catch (Exception e)
 		{
 			e.printStackTrace();
 		}
-		
-		
 	}
-
-	
 }
