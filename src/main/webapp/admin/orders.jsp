@@ -13,17 +13,17 @@
 
 	<table class="table table-striped">
 		<thead class="bg-primary text-white">
-		<tr>
-			<th scope="col">Oder ID</th>
-			<th scope="col">Name</th>
-			<th scope="col">Email</th>
-			<th scope="col">Address</th>
-			<th scope="col">Ph No</th>
-			<th scope="col">Book Name</th>
-			<th scope="col">Author</th>
-			<th scope="col">Price</th>
-			<th scope="col">Payment Type</th>
-		</tr>
+			<tr>
+				<th scope="col">Oder ID</th>
+				<th scope="col">Name</th>
+				<th scope="col">Email</th>
+				<th scope="col">Address</th>
+				<th scope="col">Ph No</th>
+				<th scope="col">Book Name</th>
+				<th scope="col">Author</th>
+				<th scope="col">Price</th>
+				<th scope="col">Payment Type</th>
+			</tr>
 		</thead>
 		<tbody>
 			<tr>
@@ -38,7 +38,7 @@
 				<td></td>
 				<td></td>
 			</tr>
-			
+
 			<tr>
 				<th scope="row">2</th>
 				<td></td>
@@ -51,7 +51,7 @@
 				<td></td>
 				<td></td>
 			</tr>
-			
+
 			<tr>
 				<th scope="row">3</th>
 				<td></td>
@@ -67,5 +67,6 @@
 
 		</tbody>
 	</table>
+	<div style="margin-top: 300px"><%@include file="footer.jsp"%></div>
 </body>
 </html>

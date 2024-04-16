@@ -13,15 +13,15 @@
 
 	<table class="table table-striped">
 		<thead class="bg-primary text-white">
-		<tr>
-			<th scope="col">ID</th>
-			<th scope="col">Book Name</th>
-			<th scope="col">Author</th>
-			<th scope="col">Price</th>
-			<th scope="col">Categories</th>
-			<th scope="col">Status</th>
-			<th scope="col">Action</th>
-		</tr>
+			<tr>
+				<th scope="col">ID</th>
+				<th scope="col">Book Name</th>
+				<th scope="col">Author</th>
+				<th scope="col">Price</th>
+				<th scope="col">Categories</th>
+				<th scope="col">Status</th>
+				<th scope="col">Action</th>
+			</tr>
 		</thead>
 		<tbody>
 			<tr>
@@ -34,7 +34,7 @@
 				<td><a href="#" class="btn btn-sm btn-primary">Edit</a> <a
 					href="#" class="btn btn-sm btn-danger">Delete</a></td>
 			</tr>
-			
+
 			<tr>
 				<th scope="row">2</th>
 				<td></td>
@@ -45,7 +45,7 @@
 				<td><a href="#" class="btn btn-sm btn-primary">Edit</a> <a
 					href="#" class="btn btn-sm btn-danger">Delete</a></td>
 			</tr>
-			
+
 			<tr>
 				<th scope="row">3</th>
 				<td></td>
@@ -59,5 +59,6 @@
 
 		</tbody>
 	</table>
+	<div style="margin-top: 285px"><%@include file="footer.jsp"%></div>
 </body>
 </html>

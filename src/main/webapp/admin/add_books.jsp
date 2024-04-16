@@ -10,6 +10,7 @@
 .form-group {
 	margin-bottom: 20px; /* Adjust the margin as needed */
 }
+
 .card {
 	margin-top: 30px; /* Add margin to the top of the card */
 }
@@ -84,5 +85,6 @@
 			</div>
 		</div>
 	</div>
+	<div><%@include file="footer.jsp"%></div>
 </body>
 </html>
