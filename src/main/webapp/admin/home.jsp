@@ -52,7 +52,7 @@ a:hover {
 			</div>
 
 			<div class="col-md-3">
-				<a href="oerders.jsp">
+				<a href="orders.jsp">
 					<div class="card">
 						<div class="card-body text-center">
 							<i class="fa-solid fa-box-open fa-3x text-warning"></i><br>
