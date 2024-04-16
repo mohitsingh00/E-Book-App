@@ -5,11 +5,11 @@ import java.sql.PreparedStatement;
 
 import com.entity.Books;
 
-public class BookDAOImpl implements BooksDAO {
+public class BooksDAOImpl implements BooksDAO {
 
 	private Connection con;
 	
-	public BookDAOImpl(Connection con) {
+	public BooksDAOImpl(Connection con) {
 		super();
 		this.con = con;
 	}
@@ -22,7 +22,7 @@ public class BookDAOImpl implements BooksDAO {
 		boolean f = false;
 		try
 		{
-			String sql = "insert into books(bookName,author,price,bookCategory,status,photo,email)";
+			String sql = "insert into books(bookName,author,price,bookCategory,status,photo,email) Values(?,?,?,?,?,?,?)";
 			PreparedStatement ps = con.prepareStatement(sql);
 			ps.setString(1, b.getBookName());
 			ps.setString(2, b.getAuthor());
