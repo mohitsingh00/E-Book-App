@@ -2,7 +2,9 @@ package com.DAO;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
 import com.entity.Books;
 
 public class BooksDAOImpl implements BooksDAO {
@@ -13,8 +15,6 @@ public class BooksDAOImpl implements BooksDAO {
 		super();
 		this.con = con;
 	}
-
-
 
 	@Override
 	public boolean addBooks(Books b)
@@ -46,4 +46,34 @@ public class BooksDAOImpl implements BooksDAO {
 		return f;
 	}
 
+	@Override
+	public List<Books> getAllBooks() 
+	{
+		List<Books> list = new ArrayList<Books>();
+		Books b = null;
+		try
+		{
+			String sql = "select * from books";
+			PreparedStatement ps = con.prepareStatement(sql);
+			ResultSet rs = ps.executeQuery();
+			while(rs.next())
+			{
+				b = new Books();
+				b.setBookID(rs.getInt(1));
+				b.setBookName(rs.getString(2));
+				b.setAuthor(rs.getString(3));
+				b.setPrice(rs.getString(4));
+				b.setBookCategory(rs.getString(5));
+				b.setStatus(rs.getString(6));
+				b.setPhotoName(rs.getString(7));
+				b.setEmail(rs.getString(8));
+				list.add(b);
+			}
+		}
+		catch (Exception e) 
+		{
+			e.printStackTrace();
+		}
+		return list;
+	}
 }
