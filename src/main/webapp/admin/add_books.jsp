@@ -24,7 +24,7 @@
 				<div class="card">
 					<div class="card-body">
 						<h4 class="text-center">Add Books</h4>
-						<form action="../AdminAddBooksServlet" method="post"
+						<form action="../add_books" method="post"
 							enctype="multipart/form-data">
 							<div class="form-group">
 								<label for="exampleInputEmail1">Book Name*</label> <input
