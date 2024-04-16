@@ -5,16 +5,19 @@ public class Books {
 	private int bookID;
 	private String bookName;
 	private String author;
-	private Double price;
+	private String price;
 	private String bookCategory;
 	private String status;
 	private String photoName;
 	private String email;
 	
-	public Books(int bookID, String bookName, String author, Double price, String bookCategory, String status,
+	public Books() {
+		super();
+	}
+
+	public Books(String bookName, String author, String price, String bookCategory, String status,
 			String photoName, String email) {
 		super();
-		this.bookID = bookID;
 		this.bookName = bookName;
 		this.author = author;
 		this.price = price;
@@ -48,11 +51,11 @@ public class Books {
 		this.author = author;
 	}
 	
-	public Double getPrice() {
+	public String getPrice() {
 		return price;
 	}
 	
-	public void setPrice(Double price) {
+	public void setPrice(String price) {
 		this.price = price;
 	}
 	
