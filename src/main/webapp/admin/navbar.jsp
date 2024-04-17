@@ -1,3 +1,5 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@page isELIgnored="false"%>
 <div class="container-fluid"
 	style="height: 10px; background-color: #303f9f"></div>
 <div class="container-fluid  p-3 bg-light">
@@ -14,11 +16,23 @@
 				<button class="btn btn-primary" type="submit">Search</button>
 			</form>
 		</div>
+
 		<div class="col-md-3">
-			<a href="login.jsp" class="btn btn-success"><i
-				class="fa-solid fa-right-to-bracket"></i> Login</a> <a
-				href="register.jsp" class="btn btn-primary"><i
-				class="fa-solid fa-user-plus"></i> Register</a>
+
+			<c:if test="${not empty userobj }">
+				<a href="../login.jsp" class="btn btn-success"><i
+					class="fa-solid fa-user"></i> ${userobj.name}</a>
+				<a href="../logout" class="btn btn-primary"><i
+					class="fa-solid fa-right-to-bracket"></i> Logout</a>
+			</c:if>
+
+			<c:if test="${empty userobj }">
+				<a href="../login.jsp" class="btn btn-success"><i
+					class="fa-solid fa-right-to-bracket"></i>Login</a>
+				<a href="../register.jsp" class="btn btn-primary"><i
+					class="fa-solid fa-user-plus"></i> Register</a>
+			</c:if>
+
 		</div>
 	</div>
 </div>
