@@ -30,23 +30,13 @@
 					<div class="card-body">
 						<h4 class="text-center">Edit Books</h4>
 
-						<c:if test="${not empty succMsg }">
-							<p class="text-center text-success">${succMsg }</p>
-							<c:remove var="succMsg" scope="session" />
-						</c:if>
-
-						<c:if test="${not empty failedMsg }">
-							<p class="text-center text-danger">${failedMsg }</p>
-							<c:remove var="failedMsg" scope="session" />
-						</c:if>
-
 						<%
 						int id = Integer.parseInt(request.getParameter("id"));
 						BooksDAOImpl dao = new BooksDAOImpl(DBConnect.getCon());
 						Books b = dao.getBooksByID(id);
 						%>
 
-						<form action="../add_books" method="post">
+						<form action="../editbooks" method="post">
 							<input type="hidden" name="id" value="<%=b.getBookID()%>">
 							<div class="form-group">
 								<label for="exampleInputEmail1">Book Name*</label> <input

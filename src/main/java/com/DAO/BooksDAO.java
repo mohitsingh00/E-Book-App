@@ -8,4 +8,8 @@ public interface BooksDAO {
 	public boolean addBooks(Books b);
 	
 	public List<Books> getAllBooks();
+	
+	public Books getBooksByID(int id);
+
+	public boolean updateEditBooks(Books b);
 }
