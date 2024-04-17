@@ -28,7 +28,7 @@ public class BooksDeleteServlet extends HttpServlet {
 			
 			if(f)
 			{
-				session.setAttribute("succMsg", "Book Delete Successfuly");
+				session.setAttribute("succMsg", "Book Delete Successfully");
 				resp.sendRedirect("admin/all_books.jsp");
 			}
 			else
