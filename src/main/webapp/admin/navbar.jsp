@@ -22,7 +22,8 @@
 			<c:if test="${not empty userobj }">
 				<a href="../login.jsp" class="btn btn-success"><i
 					class="fa-solid fa-user"></i> ${userobj.name}</a>
-				<a href="../logout" class="btn btn-primary"><i
+				<!-- Updated logout button to trigger the modal -->
+				<a href="#" id="logoutButton" class="btn btn-primary"><i
 					class="fa-solid fa-right-to-bracket"></i> Logout</a>
 			</c:if>
 
@@ -36,7 +37,6 @@
 		</div>
 	</div>
 </div>
-
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-custom">
 	<div class="container-fluid">
@@ -57,3 +57,37 @@
 		</div>
 	</div>
 </nav>
+
+<!-- Bootstrap 5 Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1"
+	aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="exampleModalCenterTitle">Logout
+					Confirmation</h5>
+				<button type="button" class="btn-close" data-bs-dismiss="modal"
+					aria-label="Close"></button>
+			</div>
+			<div class="modal-body">Are you sure you want to logout?</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary"
+					data-bs-dismiss="modal">Cancel</button>
+				<a href="../logout" class="btn btn-primary">Logout</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script>
+	// JavaScript to handle the click event of the logout button
+	document.getElementById('logoutButton').addEventListener(
+			'click',
+			function() {
+				var myModal = new bootstrap.Modal(document
+						.getElementById('exampleModalCenter'), {
+					keyboard : false
+				});
+				myModal.show();
+			});
+</script>
