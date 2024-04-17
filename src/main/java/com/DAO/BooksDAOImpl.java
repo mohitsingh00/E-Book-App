@@ -134,4 +134,27 @@ public class BooksDAOImpl implements BooksDAO {
 		}
 		return f;
 	}
+
+	
+	@Override
+	public boolean deleteBooks(int id) 
+	{
+		boolean f = false;
+		try
+		{
+			String sql = "delete from books where bookId=?";
+			PreparedStatement ps = con.prepareStatement(sql);
+			ps.setInt(1, id);
+			int i = ps.executeUpdate();
+			if(i == 1)
+			{
+				f = true;
+			}
+		}
+		catch (Exception e) 
+		{
+			e.printStackTrace();
+		}
+		return f;
+	}
 }
