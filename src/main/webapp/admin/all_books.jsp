@@ -37,7 +37,7 @@
 			<tr>
 				<td><%=b.getBookID()%></td>
 				<td><img src="../books/<%=b.getPhotoName()%>"
-					style="width: 50px; height: 50px;"></td>
+					style="width: 50px; height: 65px;"></td>
 				<td><%=b.getBookName()%></td>
 				<td><%=b.getAuthor()%></td>
 				<td><%=b.getPrice()%></td>
