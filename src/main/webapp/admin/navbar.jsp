@@ -1,5 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@page isELIgnored="false"%>
+
 <div class="container-fluid"
 	style="height: 10px; background-color: #303f9f"></div>
 <div class="container-fluid  p-3 bg-light">
@@ -21,42 +22,40 @@
 			<c:if test="${not empty userobj }">
 				<a href="../login.jsp" class="btn btn-success"><i
 					class="fa-solid fa-user"></i> ${userobj.name}</a>
-				<a href="#" class="btn btn-primary" data-bs-toggle="modal"
-					data-bs-target="#exampleModalCenter"><i
-					class="fa-solid fa-right-to-bracket"></i> Logout</a>
-			</c:if>
 
+				<button id="logoutBtn" class="btn btn-primary" data-bs-toggle="modal"
+					data-bs-target="#logoutModal">
+					<i class="fa-solid fa-right-to-bracket"></i> Logout
+				</button>
+			</c:if>
 			<c:if test="${empty userobj }">
 				<a href="../login.jsp" class="btn btn-success"><i
 					class="fa-solid fa-right-to-bracket"></i>Login</a>
+
 				<a href="../register.jsp" class="btn btn-primary"><i
 					class="fa-solid fa-user-plus"></i> Register</a>
 			</c:if>
-
 		</div>
 	</div>
 </div>
 
-<!-- Bootstrap 5 Modal -->
-<div class="modal fade" id="exampleModalCenter" tabindex="-1"
-	aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-	<div class="modal-dialog modal-dialog-centered">
-		<div class="modal-content">
-			<div class="modal-header">
-				<h5 class="modal-title" id="exampleModalCenterTitle">Logout
-					Confirmation</h5>
-				<button type="button" class="btn-close" data-bs-dismiss="modal"
-					aria-label="Close"></button>
-			</div>
-			<div class="modal-body">Are you sure you want to logout?</div>
-			<div class="modal-footer">
-				<button type="button" class="btn btn-secondary"
-					data-bs-dismiss="modal">Cancel</button>
-				<a href="../logout.jsp" class="btn btn-primary"
-					data-bs-dismiss="modal" tabindex="0">Logout</a>
-			</div>
-		</div>
-	</div>
+<!-- Modal -->
+<div class="modal fade" id="logoutModal" tabindex="-1" aria-labelledby="logoutModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="logoutModalLabel">Logout Confirmation</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Are you sure you want to logout?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+        <a href="../logout" class="btn btn-primary">Logout</a>
+      </div>
+    </div>
+  </div>
 </div>
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-custom">
@@ -76,18 +75,3 @@
 		</div>
 	</div>
 </nav>
-
-
-<script>
-    // Get the modal element
-    var modal = document.getElementById('exampleModalCenter');
-
-    // Add an event listener for when the modal is hidden
-    modal.addEventListener('hidden.bs.modal', function (event) {
-        // Focus on the navbar brand link
-        var navbarBrandLink = document.querySelector('.navbar-brand');
-        if (navbarBrandLink) {
-            navbarBrandLink.focus();
-        }
-    });
-</script>
