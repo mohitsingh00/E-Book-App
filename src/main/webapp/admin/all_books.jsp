@@ -4,8 +4,9 @@
 <%@page isELIgnored="false"%>
 <%@page import="com.DAO.BooksDAOImpl"%>
 <%@page import="com.DB.DBConnect"%>
-<%@page import="java.util.*"%>
 <%@page import="com.entity.Books"%>
+<%@page import="java.util.*"%>
+
 <!DOCTYPE html>
 <html>
 <head>
