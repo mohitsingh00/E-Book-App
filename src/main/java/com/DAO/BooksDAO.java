@@ -18,4 +18,6 @@ public interface BooksDAO {
 	public List<Books> getNewBook();
 	
 	public List<Books> getRecentBook();
+	
+	public List<Books> getOldBook();
 }
