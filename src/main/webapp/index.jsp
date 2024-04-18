@@ -139,8 +139,8 @@
 			<div class="col-md-3">
 				<div class="card">
 					<div class="card-body text-center">
-						<img alt="" src="books/C.jpg" style="width: 150px; height: 200px"
-							class="img-thumblin">
+						<img alt="" src="books/<%=b.getPhotoName()%>"
+							style="width: 150px; height: 200px" class="img-thumblin">
 						<p><%=b.getBookName()%></p>
 						<p><%=b.getAuthor()%></p>
 						<p>
@@ -149,7 +149,8 @@
 							<a href="" class="btn btn-danger btn-sm ml-1"><i
 								class="fa-solid fa-cart-shopping"></i> Add Cart</a> <a href=""
 								class="btn btn-success btn-sm ml-1">View Details</a> <a href=""
-								class="btn btn-danger btn-sm ml-1"><%=b.getPrice()%></a>
+								class="btn btn-danger btn-sm ml-1"><i
+								class="fa-solid fa-indian-rupee-sign"></i> <%=b.getPrice()%></a>
 						</div>
 					</div>
 				</div>
