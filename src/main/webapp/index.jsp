@@ -45,77 +45,52 @@
 	<div class="container">
 		<h3 class="text-center">Recent Book</h3>
 		<div class="row">
+			<%
+			BooksDAOImpl dao2 = new BooksDAOImpl(DBConnect.getCon());
+			List<Books> list2 = dao2.getRecentBook();
+			for (Books b : list2) {
+			%>
 			<div class="col-md-3">
 				<div class="card">
 					<div class="card-body text-center">
-						<img alt="" src="books/C.jpg" style="width: 150px; height: 200px"
-							class="img-thumblin">
-						<p>C Programming</p>
-						<p>Shimpy Goyal</p>
-						<p>Categories:New</p>
+						<img alt="" src="books/<%=b.getPhotoName()%>"
+							style="width: 150px; height: 200px" class="img-thumblin">
+						<p><%=b.getBookName()%></p>
+						<p><%=b.getAuthor()%></p>
+						<p>
+							<%
+							if (b.getBookCategory().equals("Old")) {
+							%>
+							Categories:
+							<%=b.getBookCategory()%>
+						<div class="button-container">
+							</p>
+							<a href="" class="btn btn-success btn-sm ml-1">View Details</a> <a
+								href="" class="btn btn-danger btn-sm ml-1"><i
+								class="fa-solid fa-indian-rupee-sign"></i> <%=b.getPrice()%></a>
+						</div>
+						<%
+						} else {
+						%>
+						Categories:
+						<%=b.getBookCategory()%></p>
 						<div class="button-container">
 							<a href="" class="btn btn-danger btn-sm ml-1"><i
 								class="fa-solid fa-cart-shopping"></i> Add Cart</a> <a href=""
 								class="btn btn-success btn-sm ml-1">View Details</a> <a href=""
-								class="btn btn-danger btn-sm ml-1">299</a>
+								class="btn btn-danger btn-sm ml-1"><i
+								class="fa-solid fa-indian-rupee-sign"></i> <%=b.getPrice()%></a>
 						</div>
-					</div>
-				</div>
-			</div>
+						<%
+						}
+						%>
 
-			<div class="col-md-3">
-				<div class="card">
-					<div class="card-body text-center">
-						<img alt="" src="books/C.jpg" style="width: 150px; height: 200px"
-							class="img-thumblin">
-						<p>C Programming</p>
-						<p>Shimpy Goyal</p>
-						<p>Categories:New</p>
-						<div class="button-container">
-							<a href="" class="btn btn-danger btn-sm ml-1"><i
-								class="fa-solid fa-cart-shopping"></i> Add Cart</a> <a href=""
-								class="btn btn-success btn-sm ml-1">View Details</a> <a href=""
-								class="btn btn-danger btn-sm ml-1">299</a>
-						</div>
 					</div>
 				</div>
 			</div>
-
-			<div class="col-md-3">
-				<div class="card">
-					<div class="card-body text-center">
-						<img alt="" src="books/C.jpg" style="width: 150px; height: 200px"
-							class="img-thumblin">
-						<p>C Programming</p>
-						<p>Shimpy Goyal</p>
-						<p>Categories:New</p>
-						<div class="button-container">
-							<a href="" class="btn btn-danger btn-sm ml-1"><i
-								class="fa-solid fa-cart-shopping"></i> Add Cart</a> <a href=""
-								class="btn btn-success btn-sm ml-1">View Details</a> <a href=""
-								class="btn btn-danger btn-sm ml-1">299</a>
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<div class="col-md-3">
-				<div class="card">
-					<div class="card-body text-center">
-						<img alt="" src="books/C.jpg" style="width: 150px; height: 200px"
-							class="img-thumblin">
-						<p>C Programming</p>
-						<p>Shimpy Goyal</p>
-						<p>Categories:New</p>
-						<div class="button-container">
-							<a href="" class="btn btn-danger btn-sm ml-1"><i
-								class="fa-solid fa-cart-shopping"></i> Add Cart</a> <a href=""
-								class="btn btn-success btn-sm ml-1">View Details</a> <a href=""
-								class="btn btn-danger btn-sm ml-1">299</a>
-						</div>
-					</div>
-				</div>
-			</div>
+			<%
+			}
+			%>
 		</div>
 
 		<div class="text-center mt-2">
@@ -130,7 +105,6 @@
 	<div class="container">
 		<h3 class="text-center">New Book</h3>
 		<div class="row">
-
 			<%
 			BooksDAOImpl dao = new BooksDAOImpl(DBConnect.getCon());
 			List<Books> list = dao.getNewBook();
@@ -144,7 +118,8 @@
 						<p><%=b.getBookName()%></p>
 						<p><%=b.getAuthor()%></p>
 						<p>
-							Categories:<%=b.getBookCategory()%></p>
+							Categories:
+							<%=b.getBookCategory()%></p>
 						<div class="button-container">
 							<a href="" class="btn btn-danger btn-sm ml-1"><i
 								class="fa-solid fa-cart-shopping"></i> Add Cart</a> <a href=""
@@ -158,7 +133,6 @@
 			<%
 			}
 			%>
-
 		</div>
 		<div class="text-center mt-2">
 			<a href="" class="btn btn-danger btn-sm">View All</a>
@@ -172,70 +146,30 @@
 	<div class="container">
 		<h3 class="text-center">Old Book</h3>
 		<div class="row">
+			<%
+			BooksDAOImpl dao3 = new BooksDAOImpl(DBConnect.getCon());
+			List<Books> list3 = dao3.getOldBook();
+			for (Books b : list3) {
+			%>
 			<div class="col-md-3">
 				<div class="card">
 					<div class="card-body text-center">
-						<img alt="" src="books/C.jpg" style="width: 150px; height: 200px"
-							class="img-thumblin">
-						<p>C Programming</p>
-						<p>Shimpy Goyal</p>
-						<p>Categories:New</p>
+						<img alt="" src="books/<%=b.getPhotoName()%>"
+							style="width: 150px; height: 200px" class="img-thumblin">
+						<p><%=b.getBookName()%></p>
+						<p><%=b.getAuthor()%></p>
+						<p>Categories: <%=b.getBookCategory()%></p>
 						<div class="button-container">
 							<a href="" class="btn btn-success btn-sm ml-1">View Details</a> <a
-								href="" class="btn btn-danger btn-sm ml-1">299</a>
+								href="" class="btn btn-danger btn-sm ml-1"><i
+								class="fa-solid fa-indian-rupee-sign"></i> <%=b.getPrice()%></a>
 						</div>
 					</div>
 				</div>
 			</div>
-
-			<div class="col-md-3">
-				<div class="card">
-					<div class="card-body text-center">
-						<img alt="" src="books/C.jpg" style="width: 150px; height: 200px"
-							class="img-thumblin">
-						<p>C Programming</p>
-						<p>Shimpy Goyal</p>
-						<p>Categories:New</p>
-						<div class="button-container">
-							<a href="" class="btn btn-success btn-sm ml-1">View Details</a> <a
-								href="" class="btn btn-danger btn-sm ml-1">299</a>
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<div class="col-md-3">
-				<div class="card">
-					<div class="card-body text-center">
-						<img alt="" src="books/C.jpg" style="width: 150px; height: 200px"
-							class="img-thumblin">
-						<p>C Programming</p>
-						<p>Shimpy Goyal</p>
-						<p>Categories:New</p>
-						<div class="button-container">
-							<a href="" class="btn btn-success btn-sm ml-1">View Details</a> <a
-								href="" class="btn btn-danger btn-sm ml-1">299</a>
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<div class="col-md-3">
-				<div class="card">
-					<div class="card-body text-center">
-						<img alt="" src="books/C.jpg" style="width: 150px; height: 200px"
-							class="img-thumblin">
-						<p>C Programming</p>
-						<p>Shimpy Goyal</p>
-						<p>Categories:New</p>
-						<div class="button-container">
-							<a href="" class="btn btn-success btn-sm ml-1">View Details</a> <a
-								href="" class="btn btn-danger btn-sm ml-1">299</a>
-						</div>
-					</div>
-				</div>
-			</div>
-
+			<%
+			}
+			%>
 		</div>
 		<div class="text-center mt-2">
 			<a href="" class="btn btn-danger btn-sm">View All</a>
