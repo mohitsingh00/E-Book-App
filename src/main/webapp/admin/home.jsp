@@ -24,6 +24,11 @@ a:hover {
 </head>
 <body>
 	<%@include file="navbar.jsp"%>
+
+	<c:if test="${empty userobj}">
+		<c:redirect url="../login.jsp" />
+	</c:if>
+
 	<div class="container">
 		<div class="row p-5">
 			<div class="col-md-3">
@@ -64,15 +69,38 @@ a:hover {
 			</div>
 
 			<div class="col-md-3">
-				<div class="card">
-					<div class="card-body text-center">
-						<i class="fa-solid fa-right-from-bracket fa-3x text-primary"></i><br>
-						<h4>Log Out</h4>
-						---------------
+				<a data-bs-toggle="modal" data-bs-target="#logoutModal">
+					<div class="card">
+						<div class="card-body text-center">
+							<i class="fa-solid fa-right-from-bracket fa-3x text-primary"></i><br>
+							<h4>Log Out</h4>
+							---------------
+						</div>
 					</div>
-				</div>
+				</a>
 			</div>
 
+		</div>
+	</div>
+
+	<!-- Modal -->
+	<div class="modal fade" id="logoutModal" tabindex="-1"
+		aria-labelledby="logoutModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="logoutModalLabel">Logout
+						Confirmation</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal"
+						aria-label="Close"></button>
+				</div>
+				<div class="modal-body">Are you sure you want to logout?</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary"
+						data-bs-dismiss="modal">Cancel</button>
+					<a href="../logout" class="btn btn-primary">Logout</a>
+				</div>
+			</div>
 		</div>
 	</div>
 

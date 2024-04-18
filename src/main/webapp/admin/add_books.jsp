@@ -20,6 +20,11 @@
 </head>
 <body style="background-color: #f0f2f2">
 	<%@include file="navbar.jsp"%>
+	
+	<c:if test="${empty userobj}">
+		<c:redirect url="../login.jsp" />
+	</c:if>
+	
 	<div class="conatianer">
 		<div class="row">
 			<div class="col-md-4 offset-md-4">

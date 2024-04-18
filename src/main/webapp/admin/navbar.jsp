@@ -10,17 +10,10 @@
 				<i class="fa-solid fa-book"></i> Ebooks
 			</h3>
 		</div>
-		<div class="col-md-6">
-			<form class="d-flex">
-				<input class="form-control me-2" type="search" placeholder="Search"
-					aria-label="Search" style="width: 220px;">
-				<button class="btn btn-primary" type="submit">Search</button>
-			</form>
-		</div>
 
 		<div class="col-md-3">
 			<c:if test="${not empty userobj }">
-				<a href="../login.jsp" class="btn btn-success"><i
+				<a class="btn btn-success"><i
 					class="fa-solid fa-user"></i> ${userobj.name}</a>
 
 				<button id="logoutBtn" class="btn btn-primary" data-bs-toggle="modal"
