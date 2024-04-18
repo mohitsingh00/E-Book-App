@@ -133,7 +133,7 @@
 
 			<%
 			BooksDAOImpl dao = new BooksDAOImpl(DBConnect.getCon());
-			List<Books> list = dao.getAllBooks();
+			List<Books> list = dao.getNewBook();
 			for (Books b : list) {
 			%>
 			<div class="col-md-3">

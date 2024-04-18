@@ -170,7 +170,7 @@ public class BooksDAOImpl implements BooksDAO {
 			ps.setString(1, "New");
 			ps.setString(2, "Active");
 			ResultSet rs = ps.executeQuery();
-			int i = 1;
+			int i = 4;
 			while(rs.next() && i <= 4)
 			{
 				b = new Books();
