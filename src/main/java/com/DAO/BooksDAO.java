@@ -16,4 +16,6 @@ public interface BooksDAO {
 	public boolean deleteBooks(int id);
 	
 	public List<Books> getNewBook();
+	
+	public List<Books> getRecentBook();
 }
