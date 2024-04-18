@@ -14,4 +14,6 @@ public interface BooksDAO {
 	public boolean updateEditBooks(Books b);
 	
 	public boolean deleteBooks(int id);
+	
+	public List<Books> getNewBook();
 }
