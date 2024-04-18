@@ -18,12 +18,11 @@
 		</div>
 
 		<div class="col-md-3">
-
 			<c:if test="${not empty userobj }">
 				<a href="../login.jsp" class="btn btn-success"><i
 					class="fa-solid fa-user"></i> ${userobj.name}</a>
-				<!-- Updated logout button to trigger the modal -->
-				<a href="#" id="logoutButton" class="btn btn-primary"><i
+				<a href="#" class="btn btn-primary" data-bs-toggle="modal"
+					data-bs-target="#exampleModalCenter"><i
 					class="fa-solid fa-right-to-bracket"></i> Logout</a>
 			</c:if>
 
@@ -34,6 +33,28 @@
 					class="fa-solid fa-user-plus"></i> Register</a>
 			</c:if>
 
+		</div>
+	</div>
+</div>
+
+<!-- Bootstrap 5 Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1"
+	aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="exampleModalCenterTitle">Logout
+					Confirmation</h5>
+				<button type="button" class="btn-close" data-bs-dismiss="modal"
+					aria-label="Close"></button>
+			</div>
+			<div class="modal-body">Are you sure you want to logout?</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary"
+					data-bs-dismiss="modal">Cancel</button>
+				<a href="../logout.jsp" class="btn btn-primary"
+					data-bs-dismiss="modal" tabindex="0">Logout</a>
+			</div>
 		</div>
 	</div>
 </div>
@@ -51,43 +72,22 @@
 			<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 				<li class="nav-item active"><a class="nav-link active"
 					aria-current="page" href="home.jsp">Home</a></li>
-
 			</ul>
-
 		</div>
 	</div>
 </nav>
 
-<!-- Bootstrap 5 Modal -->
-<div class="modal fade" id="exampleModalCenter" tabindex="-1"
-	aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-	<div class="modal-dialog modal-dialog-centered">
-		<div class="modal-content">
-			<div class="modal-header">
-				<h5 class="modal-title" id="exampleModalCenterTitle">Logout
-					Confirmation</h5>
-				<button type="button" class="btn-close" data-bs-dismiss="modal"
-					aria-label="Close"></button>
-			</div>
-			<div class="modal-body">Are you sure you want to logout?</div>
-			<div class="modal-footer">
-				<button type="button" class="btn btn-secondary"
-					data-bs-dismiss="modal">Cancel</button>
-				<a href="../logout" class="btn btn-primary">Logout</a>
-			</div>
-		</div>
-	</div>
-</div>
 
 <script>
-	// JavaScript to handle the click event of the logout button
-	document.getElementById('logoutButton').addEventListener(
-			'click',
-			function() {
-				var myModal = new bootstrap.Modal(document
-						.getElementById('exampleModalCenter'), {
-					keyboard : false
-				});
-				myModal.show();
-			});
+    // Get the modal element
+    var modal = document.getElementById('exampleModalCenter');
+
+    // Add an event listener for when the modal is hidden
+    modal.addEventListener('hidden.bs.modal', function (event) {
+        // Focus on the navbar brand link
+        var navbarBrandLink = document.querySelector('.navbar-brand');
+        if (navbarBrandLink) {
+            navbarBrandLink.focus();
+        }
+    });
 </script>
