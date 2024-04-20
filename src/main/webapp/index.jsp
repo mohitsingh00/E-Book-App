@@ -62,9 +62,8 @@
 							if (b.getBookCategory().equals("Old")) {
 							%>
 							Categories:
-							<%=b.getBookCategory()%>
+							<%=b.getBookCategory()%></p>
 						<div class="button-container">
-							</p>
 							<a href="" class="btn btn-success btn-sm ml-1">View Details</a> <a
 								href="" class="btn btn-danger btn-sm ml-1"><i
 								class="fa-solid fa-indian-rupee-sign"></i> <%=b.getPrice()%></a>
@@ -73,7 +72,7 @@
 						} else {
 						%>
 						Categories:
-						<%=b.getBookCategory()%></p>
+						<%=b.getBookCategory()%>
 						<div class="button-container">
 							<a href="" class="btn btn-danger btn-sm ml-1"><i
 								class="fa-solid fa-cart-shopping"></i> Add Cart</a> <a href=""
