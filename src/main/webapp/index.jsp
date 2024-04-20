@@ -64,8 +64,9 @@
 							Categories:
 							<%=b.getBookCategory()%></p>
 						<div class="button-container">
-							<a href="" class="btn btn-success btn-sm ml-1">View Details</a> <a
-								href="" class="btn btn-danger btn-sm ml-1"><i
+							<a href="view_books.jsp?bid=<%=b.getBookID()%>"
+								class="btn btn-success btn-sm ml-1">View Details</a> <a href=""
+								class="btn btn-danger btn-sm ml-1"><i
 								class="fa-solid fa-indian-rupee-sign"></i> <%=b.getPrice()%></a>
 						</div>
 						<%
@@ -75,7 +76,8 @@
 						<%=b.getBookCategory()%>
 						<div class="button-container">
 							<a href="" class="btn btn-danger btn-sm ml-1"><i
-								class="fa-solid fa-cart-shopping"></i> Add Cart</a> <a href=""
+								class="fa-solid fa-cart-shopping"></i> Add Cart</a> <a
+								href="view_books.jsp?bid=<%=b.getBookID()%>"
 								class="btn btn-success btn-sm ml-1">View Details</a> <a href=""
 								class="btn btn-danger btn-sm ml-1"><i
 								class="fa-solid fa-indian-rupee-sign"></i> <%=b.getPrice()%></a>
@@ -93,7 +95,8 @@
 		</div>
 
 		<div class="text-center mt-2">
-			<a href="all_recent_book.jsp" class="btn btn-danger btn-sm">View All</a>
+			<a href="all_recent_book.jsp" class="btn btn-danger btn-sm">View
+				All</a>
 		</div>
 	</div>
 	<!-- End Recent Book -->
@@ -121,7 +124,8 @@
 							<%=b.getBookCategory()%></p>
 						<div class="button-container">
 							<a href="view_books.jsp" class="btn btn-danger btn-sm ml-1"><i
-								class="fa-solid fa-cart-shopping"></i> Add Cart</a> <a href=""
+								class="fa-solid fa-cart-shopping"></i> Add Cart</a> <a
+								href="view_books.jsp?bid=<%=b.getBookID()%>"
 								class="btn btn-success btn-sm ml-1">View Details</a> <a href=""
 								class="btn btn-danger btn-sm ml-1"><i
 								class="fa-solid fa-indian-rupee-sign"></i> <%=b.getPrice()%></a>
@@ -157,10 +161,13 @@
 							style="width: 150px; height: 200px" class="img-thumblin">
 						<p><%=b.getBookName()%></p>
 						<p><%=b.getAuthor()%></p>
-						<p>Categories: <%=b.getBookCategory()%></p>
+						<p>
+							Categories:
+							<%=b.getBookCategory()%></p>
 						<div class="button-container">
-							<a href="" class="btn btn-success btn-sm ml-1">View Details</a> <a
-								href="" class="btn btn-danger btn-sm ml-1"><i
+							<a href="view_books.jsp?bid=<%=b.getBookID()%>"
+								class="btn btn-success btn-sm ml-1">View Details</a> <a href=""
+								class="btn btn-danger btn-sm ml-1"><i
 								class="fa-solid fa-indian-rupee-sign"></i> <%=b.getPrice()%></a>
 						</div>
 					</div>
