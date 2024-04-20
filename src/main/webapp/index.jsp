@@ -120,7 +120,7 @@
 							Categories:
 							<%=b.getBookCategory()%></p>
 						<div class="button-container">
-							<a href="" class="btn btn-danger btn-sm ml-1"><i
+							<a href="view_books.jsp" class="btn btn-danger btn-sm ml-1"><i
 								class="fa-solid fa-cart-shopping"></i> Add Cart</a> <a href=""
 								class="btn btn-success btn-sm ml-1">View Details</a> <a href=""
 								class="btn btn-danger btn-sm ml-1"><i
