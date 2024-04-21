@@ -23,7 +23,7 @@ public class CartDAOImpl implements CartDAO{
 			PreparedStatement ps = con.prepareStatement(sql);
 			ps.setInt(1, c.getBid());
 			ps.setInt(2, c.getUserId());
-			ps.setString(3, c.getAuthor());
+			ps.setString(3, c.getBookName());
 			ps.setString(4, c.getAuthor());
 			ps.setDouble(5, c.getPrice());
 			ps.setDouble(6, c.getTotalPrice());

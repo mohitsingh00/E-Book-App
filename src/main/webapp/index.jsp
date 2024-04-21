@@ -137,7 +137,8 @@
 							<%
 							} else {
 							%>
-							<a href="cartservlet" class="btn btn-danger btn-sm ml-1"><i
+							<a href="cart?bid=<%=b.getBookID()%>&&uid=<%=u.getId()%>"
+								class="btn btn-danger btn-sm ml-1"><i
 								class="fa-solid fa-cart-shopping"></i> Add Cart</a>
 							<%
 							}
