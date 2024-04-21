@@ -1,3 +1,4 @@
+<%@page import="com.entity.User"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@page import="com.DAO.BooksDAOImpl"%>
@@ -34,6 +35,11 @@
 </style>
 </head>
 <body style="background-color: #f7f7f7;">
+
+	<%
+	User u = (User) session.getAttribute("userobj");
+	%>
+
 	<%@include file="all_component/navbar.jsp"%>
 	<div class="container-fluid back-img">
 		<h1 class="text-center text-white heading">
@@ -123,9 +129,21 @@
 							Categories:
 							<%=b.getBookCategory()%></p>
 						<div class="button-container">
-							<a href="view_books.jsp" class="btn btn-danger btn-sm ml-1"><i
-								class="fa-solid fa-cart-shopping"></i> Add Cart</a> <a
-								href="view_books.jsp?bid=<%=b.getBookID()%>"
+							<%
+							if (u == null) {
+							%>
+							<a href="login.jsp" class="btn btn-danger btn-sm ml-1"><i
+								class="fa-solid fa-cart-shopping"></i> Add Cart</a>
+							<%
+							} else {
+							%>
+							<a href="cartservlet" class="btn btn-danger btn-sm ml-1"><i
+								class="fa-solid fa-cart-shopping"></i> Add Cart</a>
+							<%
+							}
+							%>
+
+							<a href="view_books.jsp?bid=<%=b.getBookID()%>"
 								class="btn btn-success btn-sm ml-1">View Details</a> <a href=""
 								class="btn btn-danger btn-sm ml-1"><i
 								class="fa-solid fa-indian-rupee-sign"></i> <%=b.getPrice()%></a>
