@@ -11,6 +11,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 
 @WebServlet("/cart")
 public class CartServlet extends HttpServlet{
@@ -36,13 +37,19 @@ public class CartServlet extends HttpServlet{
 			
 			CartDAOImpl dao2 = new CartDAOImpl(DBConnect.getCon());
 			boolean f = dao2.addCart(c);
+			
+			HttpSession session = req.getSession();
+			
+			
 			if(f)
 			{
-				System.out.println("Add Cart Success");
+				session.setAttribute("addCart", "Books Added to Cart");
+				resp.sendRedirect("all_new_books.jsp");
 			}
 			else
 			{
-				System.out.println("Not Added to Cart");
+				session.setAttribute("failed", "Something went Wrong");
+				resp.sendRedirect("all_new_books.jsp");
 			}
 			
 		}
