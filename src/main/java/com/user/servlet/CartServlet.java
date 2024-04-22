@@ -44,12 +44,12 @@ public class CartServlet extends HttpServlet{
 			if(f)
 			{
 				session.setAttribute("addCart", "Books Added to Cart");
-				resp.sendRedirect("all_new_books.jsp");
+				resp.sendRedirect("all_new_book.jsp");
 			}
 			else
 			{
 				session.setAttribute("failed", "Something went Wrong");
-				resp.sendRedirect("all_new_books.jsp");
+				resp.sendRedirect("all_new_book.jsp");
 			}
 			
 		}

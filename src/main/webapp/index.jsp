@@ -81,9 +81,23 @@
 						Categories:
 						<%=b.getBookCategory()%>
 						<div class="button-container">
-							<a href="" class="btn btn-danger btn-sm ml-1"><i
-								class="fa-solid fa-cart-shopping"></i> Add Cart</a> <a
-								href="view_books.jsp?bid=<%=b.getBookID()%>"
+
+							<%
+							if (u == null) {
+							%>
+							<a href="login.jsp" class="btn btn-danger btn-sm ml-1"><i
+								class="fa-solid fa-cart-shopping"></i> Add Cart</a>
+							<%
+							} else {
+							%>
+							<a href="cart?bid=<%=b.getBookID()%>&&uid=<%=u.getId()%>"
+								class="btn btn-danger btn-sm ml-1"><i
+								class="fa-solid fa-cart-shopping"></i> Add Cart</a>
+							<%
+							}
+							%>
+
+							<a href="view_books.jsp?bid=<%=b.getBookID()%>"
 								class="btn btn-success btn-sm ml-1">View Details</a> <a href=""
 								class="btn btn-danger btn-sm ml-1"><i
 								class="fa-solid fa-indian-rupee-sign"></i> <%=b.getPrice()%></a>
