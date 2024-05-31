@@ -19,7 +19,7 @@
 
 		<div class="col-md-3 d-flex justify-content-end align-items-center">
 			<c:if test="${not empty userobj}">
-				<a href="cart.jsp" class="me-3"><i
+				<a href="checkout.jsp" class="me-3"><i
 					class="fa-solid fa-cart-plus fa-2x"></i></a>
 				<a href="login.jsp" class="btn btn-success me-2"><i
 					class="fa-solid fa-circle-user"></i> ${userobj.name}</a>

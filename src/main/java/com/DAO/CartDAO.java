@@ -1,10 +1,10 @@
 package com.DAO;
 
-import com.entity.Books;
+import java.util.List;
 import com.entity.Cart;
 
 public interface CartDAO {
 
 	public boolean addCart(Cart c);
-	public Books getBookByUser();
+	public List<Cart> getBookByUser(int userId);
 }

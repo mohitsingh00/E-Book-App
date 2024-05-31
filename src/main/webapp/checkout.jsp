@@ -1,5 +1,12 @@
+<%@page import="com.entity.Cart"%>
+<%@page import="java.util.List"%>
+<%@page import="com.entity.User"%>
+<%@page import="com.DB.DBConnect"%>
+<%@page import="com.DAO.CartDAOImpl"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@page isELIgnored="false"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,6 +28,11 @@ input[type=number] {
 </head>
 <body style="background-color: #f0f1f2;">
 	<%@include file="all_component/navbar.jsp"%>
+
+	<c:if test="${empty userobj}">
+		<c:redirect url="login.jsp"></c:redirect>
+	</c:if>
+
 	<div class="container">
 		<div class="row p-4">
 			<div class="col-md-6">
@@ -37,22 +49,28 @@ input[type=number] {
 								</tr>
 							</thead>
 							<tbody>
+								<%
+								User u = (User) session.getAttribute("userobj");
+								CartDAOImpl dao = new CartDAOImpl(DBConnect.getCon());
+								List<Cart> cart = dao.getBookByUser(u.getId());
+								Double totalPrice=0.00;
+								for (Cart c : cart) {
+									totalPrice = c.getTotalPrice();
+								%>
 								<tr>
-									<th scope="row">1</th>
-									<td>Mark</td>
-									<td>Otto</td>
-									<td>@mdo</td>
+									<th scope="row"><%=c.getBookName()%></th>
+									<td><%=c.getAuthor()%></td>
+									<td><%=c.getPrice()%></td>
+									<td><a href="removeBook" class="btn btn-danger">Remove</a></td>
 								</tr>
+								<%
+								}
+								%>
 								<tr>
-									<th scope="row">2</th>
-									<td>Jacob</td>
-									<td>Thornton</td>
-									<td>@fat</td>
-								</tr>
-								<tr>
-									<th scope="row">3</th>
-									<td colspan="2">Larry the Bird</td>
-									<td>@twitter</td>
+									<td>Total Price</td>
+									<td></td>
+									<td></td>
+									<td><%=totalPrice%></td>
 								</tr>
 							</tbody>
 						</table>
@@ -114,7 +132,8 @@ input[type=number] {
 								</div>
 							</div>
 							<div class="text-center">
-								<button type="button" class="btn btn-warning me-2">Order Now</button>
+								<button type="button" class="btn btn-warning me-2">Order
+									Now</button>
 								<a href="" class="btn btn-success">Continue Shopping</a>
 							</div>
 						</form>
