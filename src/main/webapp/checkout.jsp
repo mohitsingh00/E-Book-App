@@ -33,6 +33,16 @@ input[type=number] {
 		<c:redirect url="login.jsp"></c:redirect>
 	</c:if>
 
+	<c:if test="${not empty succMsg}">
+		<div class="alert alert-success" role="alert">${succMsg}</div>
+		<c:remove var="succMsg" scope="session" />
+	</c:if>
+
+	<c:if test="${not empty failedMsg}">
+		<div class="alert alert-danger" role="alert">${failedMsg}</div>
+		<c:remove var="failedMsg" scope="session" />
+	</c:if>
+
 	<div class="container">
 		<div class="row p-4">
 			<div class="col-md-6">
@@ -53,7 +63,7 @@ input[type=number] {
 								User u = (User) session.getAttribute("userobj");
 								CartDAOImpl dao = new CartDAOImpl(DBConnect.getCon());
 								List<Cart> cart = dao.getBookByUser(u.getId());
-								Double totalPrice=0.00;
+								Double totalPrice = 0.00;
 								for (Cart c : cart) {
 									totalPrice = c.getTotalPrice();
 								%>
@@ -61,7 +71,9 @@ input[type=number] {
 									<th scope="row"><%=c.getBookName()%></th>
 									<td><%=c.getAuthor()%></td>
 									<td><%=c.getPrice()%></td>
-									<td><a href="removeBook" class="btn btn-danger">Remove</a></td>
+									<td><a
+										href="removeBook?bid=<%=c.getBid()%>&&uid=<%=c.getUserId()%>"
+										class="btn btn-danger">Remove</a></td>
 								</tr>
 								<%
 								}
