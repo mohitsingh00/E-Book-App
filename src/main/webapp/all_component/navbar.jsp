@@ -22,7 +22,7 @@
 				<a href="cart.jsp" class="me-3"><i
 					class="fa-solid fa-cart-plus fa-2x"></i></a>
 				<a href="login.jsp" class="btn btn-success me-2"><i
-					class="fa-solid fa-user"></i> ${userobj.name}</a>
+					class="fa-solid fa-circle-user"></i> ${userobj.name}</a>
 				<a href="logout" class="btn btn-primary"><i
 					class="fa-solid fa-right-to-bracket"></i> Logout</a>
 			</c:if>
