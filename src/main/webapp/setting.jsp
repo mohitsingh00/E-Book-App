@@ -76,7 +76,7 @@ footer {
 				</a>
 			</div>
 			<div class="col-md-4 mt-3">
-				<a href="">
+				<a href="order.jsp">
 					<div class="card">
 						<div class="card-body text-center">
 							<div class="text-danger">
@@ -89,7 +89,7 @@ footer {
 				</a>
 			</div>
 			<div class="col-md-4 mt-3">
-				<a href="">
+				<a href="help.jsp">
 					<div class="card">
 						<div class="card-body text-center">
 							<div class="text-primary">
