@@ -361,4 +361,61 @@ public class BooksDAOImpl implements BooksDAO {
 		}
 		return list;
 	}
+
+	@Override
+	public List<Books> getBookByOld(String email, String cate) {
+		List<Books> list = new ArrayList<Books>();
+		Books b = null;
+		try
+		{
+			String sql = "Select * from books where bookCategory=? and email=?";
+			PreparedStatement ps = con.prepareStatement(sql);
+			ps.setString(1, cate);
+			ps.setString(2, email);
+			ResultSet rs = ps.executeQuery();
+			while(rs.next())
+			{
+				b = new Books();
+				b.setBookID(rs.getInt(1));
+				b.setBookName(rs.getString(2));
+				b.setAuthor(rs.getString(3));
+				b.setPrice(rs.getString(4));
+				b.setBookCategory(rs.getString(5));
+				b.setStatus(rs.getString(6));
+				b.setPhotoName(rs.getString(7));
+				b.setEmail(rs.getString(8));
+				list.add(b);
+			}
+		}
+		catch (Exception e)
+		{
+			e.printStackTrace();
+		}
+		return list;
+	}
+
+	@Override
+	public boolean oldBookDelete(String email, String cate, int id) {
+		boolean f = false;
+		try
+		{
+			String sql = "delete from books where bookCategory=? and email=? and bookId=?";
+			PreparedStatement ps = con.prepareStatement(sql);
+			ps.setString(1, cate);
+			ps.setString(2, email);
+			ps.setInt(3, id);
+			int i = ps.executeUpdate();
+			if(i == 1 )
+			{
+				f = true;
+			}
+		}
+		catch (Exception e) 
+		{
+			e.printStackTrace();
+		}
+		return f;
+	}
+	
+	
 }

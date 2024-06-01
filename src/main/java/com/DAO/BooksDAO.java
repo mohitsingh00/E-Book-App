@@ -26,4 +26,8 @@ public interface BooksDAO {
 	public List<Books> getAllNewBook();
 	
 	public List<Books> getAllOldBook();
+	
+	public List<Books> getBookByOld(String email, String cate);
+	
+	public boolean oldBookDelete(String email, String cate, int id);
 }
