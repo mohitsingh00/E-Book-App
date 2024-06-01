@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@page isELIgnored="false"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,29 +17,33 @@ a {
 a.hover {
 	text-decoration: none;
 }
+
 body {
-    background-color: #f7f7f7;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+	background-color: #f7f7f7;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
 }
 
 .container {
-    flex: 1;
+	flex: 1;
 }
 
 footer {
-    margin-top: auto;
+	margin-top: auto;
 }
 </style>
 </head>
 <body>
+	<c:if test="${empty userobj}">
+		<c:redirect url="login.jsp" />
+	</c:if>
 	<%@include file="all_component/navbar.jsp"%>
 	<div class="container">
-		<h3 class="text-center mt-3">Hello, Jack</h3>
-		<div class="row p-5">
+		<h3 class="text-center mt-3">Hello, ${userobj.name}</h3>
+		<div class="row p-4">
 			<div class="col-md-6">
 				<a href="sell_book.jsp">
 					<div class="card">
