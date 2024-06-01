@@ -34,12 +34,12 @@ input[type=number] {
 	</c:if>
 
 	<c:if test="${not empty succMsg}">
-		<div class="alert alert-success" role="alert">${succMsg}</div>
+		<div class="alert alert-success text-center" role="alert">${succMsg}</div>
 		<c:remove var="succMsg" scope="session" />
 	</c:if>
 
 	<c:if test="${not empty failedMsg}">
-		<div class="alert alert-danger" role="alert">${failedMsg}</div>
+		<div class="alert alert-danger text-center" role="alert">${failedMsg}</div>
 		<c:remove var="failedMsg" scope="session" />
 	</c:if>
 
@@ -93,63 +93,68 @@ input[type=number] {
 				<div class="card">
 					<div class="card-body">
 						<h3 class="text-center text-success">Your Details for Order</h3>
-						<form>
+						<input type="hidden" value="${userobj.id}" name="id">
+						<form action="order" method="post">
 							<div class="row mb-3">
 								<div class="col-md-6">
 									<label for="inputName" class="form-label">Name</label> <input
 										type="text" class="form-control" id="inputName"
-										value="<%=u.getName()%>" readonly="readonly">
+										value="<%=u.getName()%>" name="username">
 								</div>
 								<div class="col-md-6">
 									<label for="inputEmail" class="form-label">Email</label> <input
 										type="email" class="form-control" id="inputEmail"
-										value="<%=u.getEmail()%>" readonly="readonly">
+										value="<%=u.getEmail()%>" name="email">
 								</div>
 							</div>
 							<div class="row mb-3">
 								<div class="col-md-6">
 									<label for="inputPhone" class="form-label">Phone</label> <input
 										type="number" class="form-control" id="inputPhone"
-										value="<%=u.getPhno()%>" readonly="readonly">
+										value="<%=u.getPhno()%>" name="phno">
 								</div>
 								<div class="col-md-6">
 									<label for="inputAddress" class="form-label">Address</label> <input
-										type="text" class="form-control" id="inputAddress">
+										type="text" class="form-control" id="inputAddress"
+										name="address">
 								</div>
 							</div>
 							<div class="row mb-3">
 								<div class="col-md-6">
 									<label for="inputLandmark" class="form-label">Landmark</label>
-									<input type="text" class="form-control" id="inputLandmark">
+									<input type="text" class="form-control" id="inputLandmark"
+										name="landmark">
 								</div>
 								<div class="col-md-6">
 									<label for="inputCity" class="form-label">City</label> <input
-										type="text" class="form-control" id="inputCity">
+										type="text" class="form-control" id="inputCity" name="city">
 								</div>
 							</div>
 							<div class="row mb-3">
 								<div class="col-md-6">
 									<label for="inputState" class="form-label">State</label> <input
-										type="text" class="form-control" id="inputState">
+										type="text" class="form-control" id="inputState" name="state">
 								</div>
 								<div class="col-md-6">
 									<label for="inputPinCode" class="form-label">Pin Code</label> <input
-										type="number" class="form-control" id="inputPinCode">
+										type="number" class="form-control" id="inputPinCode"
+										name="pincode">
 								</div>
 							</div>
 							<div class="row mb-3">
 								<div class="col-md-12">
 									<label for="inputPaymentMode" class="form-label">Payment
-										Mode</label> <select id="inputPaymentMode" class="form-select">
-										<option selected>Choose...</option>
-										<option>Cash on Delivery</option>
+										Mode</label> <select id="inputPaymentMode" class="form-select"
+										name="paymentType">
+										<option value="noselect">Choose...</option>
+										<option value="COD">Cash on Delivery</option>
 									</select>
 								</div>
 							</div>
 							<div class="text-center">
 								<button type="button" class="btn btn-warning me-2">Order
 									Now</button>
-								<a href="" class="btn btn-success">Continue Shopping</a>
+								<a href="index.jsp" class="btn btn-success">Continue Shopping</a>
 							</div>
 						</form>
 					</div>
