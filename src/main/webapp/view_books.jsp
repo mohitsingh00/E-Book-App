@@ -9,8 +9,26 @@
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 <%@include file="all_component/allCSS.jsp"%>
+<style>
+body {
+	background-color: #f7f7f7;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+
+.container {
+	flex: 1;
+}
+
+footer {
+	margin-top: auto;
+}
+</style>
 </head>
-<body style="background-color: #f7f7f7;">
+<body>
 	<%@include file="all_component/navbar.jsp"%>
 
 	<%
