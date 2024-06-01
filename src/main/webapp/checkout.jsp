@@ -72,7 +72,7 @@ input[type=number] {
 									<td><%=c.getAuthor()%></td>
 									<td><%=c.getPrice()%></td>
 									<td><a
-										href="removeBook?bid=<%=c.getBid()%>&&uid=<%=c.getUserId()%>"
+										href="removeBook?bid=<%=c.getBid()%>&&uid=<%=c.getUserId()%>&&cid=<%=c.getCid()%>"
 										class="btn btn-danger">Remove</a></td>
 								</tr>
 								<%
