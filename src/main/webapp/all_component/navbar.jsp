@@ -65,9 +65,9 @@
 			</ul>
 			<form class="d-flex">
 				<div style="margin-right: 10px;">
-					<button class="btn btn-light" type="submit">
+					<a href="setting.jsp" class="btn btn-light" type="submit">
 						<i class="fa-solid fa-gear"></i> Setting
-					</button>
+					</a>
 				</div>
 				<div>
 					<button class="btn btn-light" type="submit">

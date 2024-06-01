@@ -97,17 +97,20 @@ input[type=number] {
 							<div class="row mb-3">
 								<div class="col-md-6">
 									<label for="inputName" class="form-label">Name</label> <input
-										type="text" class="form-control" id="inputName">
+										type="text" class="form-control" id="inputName"
+										value="<%=u.getName()%>" readonly="readonly">
 								</div>
 								<div class="col-md-6">
 									<label for="inputEmail" class="form-label">Email</label> <input
-										type="email" class="form-control" id="inputEmail">
+										type="email" class="form-control" id="inputEmail"
+										value="<%=u.getEmail()%>" readonly="readonly">
 								</div>
 							</div>
 							<div class="row mb-3">
 								<div class="col-md-6">
 									<label for="inputPhone" class="form-label">Phone</label> <input
-										type="number" class="form-control" id="inputPhone">
+										type="number" class="form-control" id="inputPhone"
+										value="<%=u.getPhno()%>" readonly="readonly">
 								</div>
 								<div class="col-md-6">
 									<label for="inputAddress" class="form-label">Address</label> <input
