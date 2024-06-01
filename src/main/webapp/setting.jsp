@@ -73,9 +73,9 @@ footer {
 					<div class="card">
 						<div class="card-body text-center">
 							<div class="text-primary">
-								<i class="fa-solid fa-pen-to-square fa-3x"></i>
+								<i class="fa-solid fa-user-pen fa-3x"></i> 
 							</div>
-							<h4>Login & Security</h4>
+							<h4>Edit Profile</h4>
 						</div>
 					</div>
 				</a>

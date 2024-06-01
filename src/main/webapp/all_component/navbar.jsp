@@ -19,10 +19,13 @@
 
 		<div class="col-md-3 d-flex justify-content-end align-items-center">
 			<c:if test="${not empty userobj}">
+			
 				<a href="checkout.jsp" class="me-3"><i
 					class="fa-solid fa-cart-plus fa-2x"></i></a>
-				<a href="login.jsp" class="btn btn-success me-2"><i
+					
+				<a href="" class="btn btn-success me-2"><i
 					class="fa-solid fa-circle-user"></i> ${userobj.name}</a>
+					
 				<a href="logout" class="btn btn-primary"><i
 					class="fa-solid fa-right-to-bracket"></i> Logout</a>
 			</c:if>
@@ -30,6 +33,7 @@
 			<c:if test="${empty userobj}">
 				<a href="login.jsp" class="btn btn-success me-2"><i
 					class="fa-solid fa-right-to-bracket"></i> Login</a>
+					
 				<a href="register.jsp" class="btn btn-primary"><i
 					class="fa-solid fa-user-plus"></i> Register</a>
 			</c:if>
