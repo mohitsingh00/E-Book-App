@@ -87,7 +87,7 @@ public class BookOrderImpl implements BookOrderDAO {
 	}
 
 	@Override
-	public List<BookOrder> getBook()
+	public List<BookOrder> getAllOrder()
 	{
 		List<BookOrder> list = new ArrayList<BookOrder>();
 		BookOrder o = null;

@@ -1,5 +1,11 @@
+<%@page import="java.util.List"%>
+<%@page import="com.DB.DBConnect"%>
+<%@page import="com.entity.BookOrder"%>
+<%@page import="com.DAO.BookOrderImpl"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@page isELIgnored="false"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -26,45 +32,25 @@
 			</tr>
 		</thead>
 		<tbody>
-			<tr>
-				<th scope="row">1</th>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-			</tr>
-
-			<tr>
-				<th scope="row">2</th>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-			</tr>
-
-			<tr>
-				<th scope="row">3</th>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-			</tr>
-
+			<%
+				BookOrderImpl dao = new BookOrderImpl(DBConnect.getCon());
+				List<BookOrder> blist = dao.getAllOrder();
+				for (BookOrder b : blist) {
+				%>
+				<tr>
+					<th scope="row"><%=b.getOrderId()%></th>
+					<td><%=b.getUsername()%></td>
+					<td><%=b.getEmail() %></td>
+					<td><%=b.getFullAddress()%></td>
+					<td><%=b.getPhno()%></td>
+					<td><%=b.getBookName()%></td>
+					<td><%=b.getAuthor()%></td>
+					<td><%=b.getPrice()%></td>
+					<td><%=b.getPaymentType()%></td>
+				</tr>
+				<%
+				}
+				%>
 		</tbody>
 	</table>
 	<div style="margin-top: 300px"><%@include file="footer.jsp"%></div>
