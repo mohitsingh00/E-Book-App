@@ -105,12 +105,17 @@ public class UserDAOImpl implements UserDAO{
 		boolean f = false;
 		try
 		{
-			String sql = "update user set name=?,email=?,phno=? where id=?";
+			String sql = "update user set name=?,email=?,phno=?,address=?,landmark=?,city=?,state=?,pincode=? where id=?";
 			PreparedStatement ps = con.prepareStatement(sql);
 			ps.setString(1, us.getName());
 			ps.setString(2, us.getEmail());
 			ps.setString(3, us.getPhno());
-			ps.setInt(4, us.getId());
+			ps.setString(4, us.getAddress());
+			ps.setString(5, us.getLandmark());
+			ps.setString(6, us.getCity());
+			ps.setString(7, us.getState());
+			ps.setString(8, us.getPincode());
+			ps.setInt(9, us.getId());
 
 			int i = ps.executeUpdate();
 			if(i == 1)

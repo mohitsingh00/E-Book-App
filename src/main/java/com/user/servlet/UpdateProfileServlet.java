@@ -1,11 +1,9 @@
 package com.user.servlet;
 
 import java.io.IOException;
-
 import com.DAO.UserDAOImpl;
 import com.DB.DBConnect;
 import com.entity.User;
-
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -24,6 +22,11 @@ public class UpdateProfileServlet extends HttpServlet {
 			String name = req.getParameter("fname");
 			String email = req.getParameter("email");
 			String phno = req.getParameter("phno");
+			String address = req.getParameter("address");
+			String landmark = req.getParameter("landmark");
+			String city = req.getParameter("city");
+			String state = req.getParameter("state");
+			String pincode = req.getParameter("pincode");
 			String password = req.getParameter("password");
 			
 			User us = new User();
@@ -31,6 +34,11 @@ public class UpdateProfileServlet extends HttpServlet {
 			us.setName(name);
 			us.setEmail(email);
 			us.setPhno(phno);
+			us.setAddress(address);
+			us.setLandmark(landmark);
+			us.setCity(city);
+			us.setState(state);
+			us.setPincode(pincode);
 			
 			HttpSession session = req.getSession();
 			UserDAOImpl dao = new UserDAOImpl(DBConnect.getCon());
@@ -56,7 +64,6 @@ public class UpdateProfileServlet extends HttpServlet {
 				session.setAttribute("failedMsg", "Incorrect Password");
 				resp.sendRedirect("edit_profile.jsp");
 			}
-			resp.sendRedirect("edit_profile.jsp");
 		}
 		catch (Exception e) 
 		{

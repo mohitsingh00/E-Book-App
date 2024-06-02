@@ -19,6 +19,9 @@
 </style>
 </head>
 <body style="background-color: #f0f2f2">
+	<c:if test="${empty userobj}">
+		<c:redirect url="login.jsp" />
+	</c:if>
 	<%@include file="all_component/navbar.jsp"%>
 	<div class="container">
 		<div class="row">
@@ -58,13 +61,43 @@
 									required="required" name="phno" value="${userobj.phno}">
 							</div>
 							<div class="mb-3">
+								<label for="exampleInputEmail1" class="form-label">Address</label>
+								<input type="text" class="form-control" id="exampleInputEmail1"
+									aria-describedby="emailHelp" required="required" name="address"
+									value="${userobj.address}">
+							</div>
+							<div class="mb-3">
+								<label for="exampleInputEmail1" class="form-label">Landmark</label>
+								<input type="text" class="form-control" id="exampleInputEmail1"
+									aria-describedby="emailHelp" required="required"
+									name="landmark" value="${userobj.landmark}">
+							</div>
+							<div class="mb-3">
+								<label for="exampleInputEmail1" class="form-label">City</label>
+								<input type="text" class="form-control" id="exampleInputEmail1"
+									aria-describedby="emailHelp" required="required" name="city"
+									value="${userobj.city}">
+							</div>
+							<div class="mb-3">
+								<label for="exampleInputEmail1" class="form-label">State</label>
+								<input type="text" class="form-control"
+									id="exampleInputEmail1" aria-describedby="emailHelp"
+									required="required" name="state" value="${userobj.state}">
+							</div>
+							<div class="mb-3">
+								<label for="exampleInputEmail1" class="form-label">Pincode</label>
+								<input type="number" class="form-control"
+									id="exampleInputEmail1" aria-describedby="emailHelp"
+									required="required" name="pincode" value="${userobj.pincode}">
+							</div>
+							<div class="mb-3">
 								<label for="exampleInputPassword1" class="form-label">Password</label>
 								<input type="password" class="form-control"
 									id="exampleInputPassword1" required="required" name="password">
 							</div>
 
 							<div class="text-center">
-								<button type="submit" class="btn btn-primary btn-center">Update</button>
+								<button type="submit" class="btn btn-primary btn-center">Save</button>
 							</div>
 						</form>
 					</div>
