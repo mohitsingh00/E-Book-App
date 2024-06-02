@@ -93,8 +93,8 @@ input[type=number] {
 				<div class="card">
 					<div class="card-body">
 						<h3 class="text-center text-success">Your Details for Order</h3>
-						<input type="hidden" value="${userobj.id}" name="id">
-						<form action="order" method="post">
+						<form action="orderServlet" method="post">
+							<input type="text" value="${userobj.id}" name="id">
 							<div class="row mb-3">
 								<div class="col-md-6">
 									<label for="inputName" class="form-label">Name</label> <input
@@ -152,9 +152,10 @@ input[type=number] {
 								</div>
 							</div>
 							<div class="text-center">
-								<button type="button" class="btn btn-warning me-2">Order
+								<button type="submit" class="btn btn-warning me-2">Order
 									Now</button>
-								<a href="index.jsp" class="btn btn-success">Continue Shopping</a>
+								<a href="index.jsp" class="btn btn-success">Continue
+									Shopping</a>
 							</div>
 						</form>
 					</div>

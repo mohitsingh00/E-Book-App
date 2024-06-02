@@ -22,7 +22,7 @@ public class BookOrderImpl implements BookOrderDAO {
 		boolean f = false;
 		try
 		{
-			String sql = "insert into BookOrder(order_id,username,email,address,phone,book_name,author,price,payment) values(?,?,?,?,?,?,?,?,?)";
+			String sql = "insert into book_order(order_id,username,email,address,phone,book_name,author,price,payment) values(?,?,?,?,?,?,?,?,?)";
 			con.setAutoCommit(false);
 			PreparedStatement ps = con.prepareStatement(sql);
 			for(BookOrder b:blist)
@@ -49,5 +49,4 @@ public class BookOrderImpl implements BookOrderDAO {
 		}
 		return f;
 	}
-
 }

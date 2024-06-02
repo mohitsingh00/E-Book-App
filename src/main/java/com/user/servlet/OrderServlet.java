@@ -18,7 +18,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
-@WebServlet("/order")
+@WebServlet("/orderServlet")
 public class OrderServlet extends HttpServlet {
 
 	@Override
@@ -28,7 +28,7 @@ public class OrderServlet extends HttpServlet {
 		{
 			HttpSession session = req.getSession();
 			int id = Integer.parseInt(req.getParameter("id"));
-			String name = req.getParameter("fname");
+			String name = req.getParameter("username");
 			String email = req.getParameter("email");
 			String phno = req.getParameter("phno");
 			String address = req.getParameter("address");
@@ -73,7 +73,12 @@ public class OrderServlet extends HttpServlet {
 				boolean f = dao2.saveOrder(orderList);
 				if(f)
 				{
-					
+					resp.sendRedirect("order_success.jsp");;
+				}
+				else
+				{
+					session.setAttribute("failedMsg", "Your Order Failed");
+					resp.sendRedirect("checkout.jsp");
 				}
 			}
 		}
