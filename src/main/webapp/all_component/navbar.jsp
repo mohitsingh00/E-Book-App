@@ -10,8 +10,8 @@
 			</h3>
 		</div>
 		<div class="col-md-6 d-flex justify-content-center">
-			<form class="d-flex">
-				<input class="form-control me-2" type="search" placeholder="Search"
+			<form class="d-flex" action="search.jsp" method="post">
+				<input class="form-control me-2" type="search" name="ch" placeholder="Search"
 					aria-label="Search" style="width: 220px;">
 				<button class="btn btn-primary" type="submit">Search</button>
 			</form>

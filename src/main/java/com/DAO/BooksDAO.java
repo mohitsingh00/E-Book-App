@@ -30,4 +30,6 @@ public interface BooksDAO {
 	public List<Books> getBookByOld(String email, String cate);
 	
 	public boolean oldBookDelete(String email, String cate, int id);
+	
+	public List<Books> getBookBySearch(String ch);
 }

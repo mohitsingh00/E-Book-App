@@ -8,7 +8,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>All Recent Books</title>
+<title>Search</title>
 <%@include file="all_component/allCSS.jsp"%>
 <style type="text/css">
 .card:hover .card-body {
@@ -21,8 +21,9 @@
 	<div class="container-fluid">
 		<div class="row p-4">
 			<%
+			String ch = request.getParameter("ch");
 			BooksDAOImpl dao2 = new BooksDAOImpl(DBConnect.getCon());
-			List<Books> list2 = dao2.getAllRecentBook();
+			List<Books> list2 = dao2.getBookBySearch(ch);
 			for (Books b : list2) {
 			%>
 			<div class="col-md-3">
@@ -40,9 +41,8 @@
 							<%=b.getBookCategory()%></p>
 						<div class="button-container">
 
-							<a href="view_books.jsp?bid=<%=b.getBookID()%>"
-								class="btn btn-success btn-sm ml-1">View Details</a> <a href=""
-								class="btn btn-danger btn-sm ml-1"><i
+							<a href="view_books.jsp?bid=<%=b.getBookID()%>" class="btn btn-success btn-sm ml-1">View Details</a> <a
+								href="" class="btn btn-danger btn-sm ml-1"><i
 								class="fa-solid fa-indian-rupee-sign"></i> <%=b.getPrice()%></a>
 						</div>
 						<%
@@ -52,8 +52,7 @@
 						<%=b.getBookCategory()%>
 						<div class="button-container">
 							<a href="" class="btn btn-danger btn-sm ml-1"><i
-								class="fa-solid fa-cart-shopping"></i> Add Cart</a> <a
-								href="view_books.jsp?bid=<%=b.getBookID()%>"
+								class="fa-solid fa-cart-shopping"></i> Add Cart</a> <a href=""
 								class="btn btn-success btn-sm ml-1">View Details</a> <a href=""
 								class="btn btn-danger btn-sm ml-1"><i
 								class="fa-solid fa-indian-rupee-sign"></i> <%=b.getPrice()%></a>
@@ -70,6 +69,5 @@
 			%>
 		</div>
 	</div>
-	<%@include file="all_component/footer.jsp"%>
 </body>
 </html>
