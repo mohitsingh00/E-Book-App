@@ -43,42 +43,50 @@ public class OrderServlet extends HttpServlet {
 			CartDAOImpl dao = new CartDAOImpl(DBConnect.getCon());
 			
 			List<Cart> blist = dao.getBookByUser(id);
-			BookOrderImpl dao2 = new BookOrderImpl(DBConnect.getCon());
-			
-			BookOrder o = null;
-			ArrayList<BookOrder> orderList = new ArrayList<>();
-			Random ran = new Random();
-			for(Cart c : blist)
+			if(blist.isEmpty())
 			{
-				o = new BookOrder();
-				o.setOrderId("BOOK-ORD-"+ran.nextInt(1000));
-				o.setUsername(name);
-				o.setEmail(email);
-				o.setPhno(phno);
-				o.setFullAddress(fullAddress);
-				o.setBookName(c.getBookName());
-				o.setAuthor(c.getAuthor());
-				o.setPrice(c.getPrice()+"");
-				o.setPaymentType(paymentType);
-				orderList.add(o);
-			}
-			
-			if("noselect".equals(paymentType))
-			{
-				session.setAttribute("failedMsg", "Select Payment Option");
+				session.setAttribute("failedMsg", "No Items in Cart");
 				resp.sendRedirect("checkout.jsp");
 			}
 			else
 			{
-				boolean f = dao2.saveOrder(orderList);
-				if(f)
+				BookOrderImpl dao2 = new BookOrderImpl(DBConnect.getCon());
+				
+				BookOrder o = null;
+				ArrayList<BookOrder> orderList = new ArrayList<>();
+				Random ran = new Random();
+				for(Cart c : blist)
 				{
-					resp.sendRedirect("order_success.jsp");;
+					o = new BookOrder();
+					o.setOrderId("BOOK-ORD-"+ran.nextInt(1000));
+					o.setUsername(name);
+					o.setEmail(email);
+					o.setPhno(phno);
+					o.setFullAddress(fullAddress);
+					o.setBookName(c.getBookName());
+					o.setAuthor(c.getAuthor());
+					o.setPrice(c.getPrice()+"");
+					o.setPaymentType(paymentType);
+					orderList.add(o);
+				}
+				
+				if("noselect".equals(paymentType))
+				{
+					session.setAttribute("failedMsg", "Select Payment Option");
+					resp.sendRedirect("checkout.jsp");
 				}
 				else
 				{
-					session.setAttribute("failedMsg", "Your Order Failed");
-					resp.sendRedirect("checkout.jsp");
+					boolean f = dao2.saveOrder(orderList);
+					if(f)
+					{
+						resp.sendRedirect("order_success.jsp");
+					}
+					else
+					{
+						session.setAttribute("failedMsg", "Your Order Failed");
+						resp.sendRedirect("checkout.jsp");
+					}
 				}
 			}
 		}

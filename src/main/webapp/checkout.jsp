@@ -94,51 +94,53 @@ input[type=number] {
 					<div class="card-body">
 						<h3 class="text-center text-success">Your Details for Order</h3>
 						<form action="orderServlet" method="post">
-							<input type="text" value="${userobj.id}" name="id">
+							<input type="hidden" value="${userobj.id}" name="id">
 							<div class="row mb-3">
 								<div class="col-md-6">
 									<label for="inputName" class="form-label">Name</label> <input
 										type="text" class="form-control" id="inputName"
-										value="<%=u.getName()%>" name="username">
+										value="<%=u.getName()%>" name="username" required>
 								</div>
 								<div class="col-md-6">
 									<label for="inputEmail" class="form-label">Email</label> <input
 										type="email" class="form-control" id="inputEmail"
-										value="<%=u.getEmail()%>" name="email">
+										value="<%=u.getEmail()%>" name="email" required>
 								</div>
 							</div>
 							<div class="row mb-3">
 								<div class="col-md-6">
 									<label for="inputPhone" class="form-label">Phone</label> <input
 										type="number" class="form-control" id="inputPhone"
-										value="<%=u.getPhno()%>" name="phno">
+										value="<%=u.getPhno()%>" name="phno" required>
 								</div>
 								<div class="col-md-6">
 									<label for="inputAddress" class="form-label">Address</label> <input
 										type="text" class="form-control" id="inputAddress"
-										name="address">
+										name="address" required>
 								</div>
 							</div>
 							<div class="row mb-3">
 								<div class="col-md-6">
 									<label for="inputLandmark" class="form-label">Landmark</label>
 									<input type="text" class="form-control" id="inputLandmark"
-										name="landmark">
+										name="landmark" required>
 								</div>
 								<div class="col-md-6">
 									<label for="inputCity" class="form-label">City</label> <input
-										type="text" class="form-control" id="inputCity" name="city">
+										type="text" class="form-control" id="inputCity" name="city"
+										required>
 								</div>
 							</div>
 							<div class="row mb-3">
 								<div class="col-md-6">
 									<label for="inputState" class="form-label">State</label> <input
-										type="text" class="form-control" id="inputState" name="state">
+										type="text" class="form-control" id="inputState" name="state"
+										required>
 								</div>
 								<div class="col-md-6">
 									<label for="inputPinCode" class="form-label">Pin Code</label> <input
 										type="number" class="form-control" id="inputPinCode"
-										name="pincode">
+										name="pincode" required>
 								</div>
 							</div>
 							<div class="row mb-3">
