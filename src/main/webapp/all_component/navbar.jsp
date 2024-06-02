@@ -68,15 +68,17 @@
 						Old Book</a></li>
 			</ul>
 			<form class="d-flex">
-				<div style="margin-right: 10px;">
-					<a href="setting.jsp" class="btn btn-light" type="submit">
-						<i class="fa-solid fa-gear"></i> Setting
-					</a>
-				</div>
+				<c:if test="${not empty userobj}">
+					<div style="margin-right: 10px;">
+						<a href="setting.jsp" class="btn btn-light">
+							<i class="fa-solid fa-gear"></i> Settings
+						</a>
+					</div>
+				</c:if>
 				<div>
-					<button class="btn btn-light" type="submit">
+					<a href="contact.jsp" class="btn btn-light">
 						<i class="fa-solid fa-square-phone"></i> Contact Us
-					</button>
+					</a>
 				</div>
 			</form>
 		</div>

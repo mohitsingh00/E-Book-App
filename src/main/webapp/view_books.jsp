@@ -109,13 +109,14 @@ footer {
 					} else {
 					%>
 					<a href="cart?bid=<%=b.getBookID()%>&&uid=<%=u.getId()%>"
-						class="btn btn-danger"><i class="fa-solid fa-cart-shopping"></i>
+						class="btn btn-primary"><i class="fa-solid fa-cart-shopping"></i>
 						Add Cart</a>
 					<%
 					}
 					%>
-					<a href="" class="btn btn-danger"><i
-						class="fa-solid fa-indian-rupee-sign"></i><%=b.getPrice()%></a>
+					<span class="btn btn-danger btn-sm ml-1"> <i
+						class="fa-solid fa-indian-rupee-sign"></i> <%=b.getPrice()%>
+					</span> >
 				</div>
 				<%
 				}

@@ -72,9 +72,11 @@
 							%>
 
 							<a href="view_books.jsp?bid=<%=b.getBookID()%>"
-								class="btn btn-success btn-sm ml-1">View Details</a> <a href=""
-								class="btn btn-danger btn-sm ml-1"><i
-								class="fa-solid fa-indian-rupee-sign"></i> <%=b.getPrice()%></a>
+								class="btn btn-success btn-sm ml-1">View Details</a> <span
+								class="btn btn-danger btn-sm ml-1"> <i
+								class="fa-solid fa-indian-rupee-sign"></i> <%=b.getPrice()%>
+							</span>
+
 						</div>
 						<%
 						}

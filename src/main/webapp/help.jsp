@@ -126,7 +126,7 @@ body {
         <div class="row help-section">
             <div class="col-md-8 offset-md-2">
                 <h4><i class="fas fa-envelope"></i> Contact Us</h4>
-                <form class="contact-form" action="submitContactForm" method="post">
+                <form class="contact-form">
                     <div class="form-group">
                         <label for="name">Name</label>
                         <input type="text" class="form-control" id="name" name="name" required>

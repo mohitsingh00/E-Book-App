@@ -8,7 +8,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>All Recent Books</title>
+<title>All Old Books</title>
 <%@include file="all_component/allCSS.jsp"%>
 <style type="text/css">
 .card:hover .card-body {
@@ -36,9 +36,11 @@
 							Categories:
 							<%=b.getBookCategory()%></p>
 						<div class="button-container">
-							<a href="view_books.jsp?bid=<%=b.getBookID()%>" class="btn btn-success btn-sm ml-1">View Details</a> <a
-								href="" class="btn btn-danger btn-sm ml-1"><i
-								class="fa-solid fa-indian-rupee-sign"></i> <%=b.getPrice()%></a>
+							<a href="view_books.jsp?bid=<%=b.getBookID()%>"
+								class="btn btn-success btn-sm ml-1">View Details</a> <span
+								class="btn btn-danger btn-sm ml-1"> <i
+								class="fa-solid fa-indian-rupee-sign"></i> <%=b.getPrice()%>
+							</span>
 						</div>
 					</div>
 				</div>
