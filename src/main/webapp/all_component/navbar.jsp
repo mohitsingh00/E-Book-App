@@ -23,7 +23,7 @@
 				<a href="checkout.jsp" class="me-3"><i
 					class="fa-solid fa-cart-plus fa-2x"></i></a>
 					
-				<a href="" class="btn btn-success me-2"><i
+				<a href="edit_profile.jsp" class="btn btn-success me-2"><i
 					class="fa-solid fa-circle-user"></i> ${userobj.name}</a>
 					
 				<a href="logout" class="btn btn-primary"><i

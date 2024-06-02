@@ -26,7 +26,7 @@
 			for (Books b : list3) {
 			%>
 			<div class="col-md-3">
-				<div class="card">
+				<div class="card mt-3">
 					<div class="card-body text-center">
 						<img alt="" src="books/<%=b.getPhotoName()%>"
 							style="width: 120px; height: 170px" class="img-thumblin">

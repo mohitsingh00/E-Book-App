@@ -45,7 +45,7 @@
 							<div class="text-center">
 								<button type="submit" class="btn btn-primary">Login</button>
 								<br>
-								<br> <a href="register.jsp">Create Account</a>
+								<br> <a href="register.jsp" class="btn btn-success btn-sm ml-1">Create Account</a>
 							</div>
 						</form>
 					</div>

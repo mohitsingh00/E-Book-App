@@ -1,3 +1,4 @@
+<%@page import="com.entity.User"%>
 <%@page import="com.entity.Books"%>
 <%@page import="com.DB.DBConnect"%>
 <%@page import="com.DAO.BooksDAOImpl"%>
@@ -29,6 +30,9 @@ footer {
 </style>
 </head>
 <body>
+	<%
+	User u = (User) session.getAttribute("userobj");
+	%>
 	<%@include file="all_component/navbar.jsp"%>
 
 	<%
@@ -90,16 +94,28 @@ footer {
 					<a href="index.jsp" class="btn btn-success"><i
 						class="fa-solid fa-cart-shopping"></i> Continue Shopping</a> <a
 						href="" class="btn btn-danger"><i
-						class="fa-solid fa-indian-rupee-sign"></i> 200</a>
+						class="fa-solid fa-indian-rupee-sign"></i><%=b.getPrice()%></a>
 				</div>
 				<%
 				} else {
 				%>
 				<div class="text-center p-3">
-					<a href="" class="btn btn-primary"><i
-						class="fa-solid fa-cart-shopping"></i> Add Cart</a> <a href=""
-						class="btn btn-danger"><i
-						class="fa-solid fa-indian-rupee-sign"></i> 200</a>
+					<%
+					if (u == null) {
+					%>
+					<a href="login.jsp" class="btn btn-primary"><i
+						class="fa-solid fa-cart-shopping"></i> Add Cart</a>
+					<%
+					} else {
+					%>
+					<a href="cart?bid=<%=b.getBookID()%>&&uid=<%=u.getId()%>"
+						class="btn btn-danger"><i class="fa-solid fa-cart-shopping"></i>
+						Add Cart</a>
+					<%
+					}
+					%>
+					<a href="" class="btn btn-danger"><i
+						class="fa-solid fa-indian-rupee-sign"></i><%=b.getPrice()%></a>
 				</div>
 				<%
 				}
