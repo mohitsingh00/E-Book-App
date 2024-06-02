@@ -4,6 +4,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
 import com.entity.User;
+import com.mysql.cj.protocol.Resultset;
 
 public class UserDAOImpl implements UserDAO{
 
@@ -124,6 +125,27 @@ public class UserDAOImpl implements UserDAO{
 		
 		return f;
 	}
-	
-}
 
+	@Override
+	public boolean checkUser(String em) 
+	{
+		boolean f = false;
+		try
+		{
+			String sql = "Select * from user where email=?";
+			PreparedStatement ps = con.prepareStatement(sql);
+			ps.setString(1, em);
+			ResultSet rs = ps.executeQuery();
+			while(rs.next())
+			{
+				f = false;
+			}
+		} 
+		catch (Exception e) 
+		{
+			e.printStackTrace();
+		}
+		
+		return f;
+	}
+}

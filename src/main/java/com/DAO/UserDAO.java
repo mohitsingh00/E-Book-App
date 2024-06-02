@@ -11,4 +11,6 @@ public interface UserDAO {
 	public boolean checkPassword(int id, String ps);
 	
 	public boolean updateUser(User us);
+	
+	public boolean checkUser(String em);
 }
