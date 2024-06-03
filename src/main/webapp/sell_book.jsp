@@ -72,9 +72,9 @@
 								</div>
 							</div>
 
-							<div class="form-group">
+							<div class="form-group text-center">
 								<!-- Move the button below the file input -->
-								<button type="submit" class="btn btn-primary">Sell</button>
+								<button type="submit" class="btn btn-primary">Sell Now</button>
 							</div>
 
 						</form>

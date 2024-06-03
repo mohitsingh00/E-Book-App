@@ -13,15 +13,72 @@
 <meta charset="ISO-8859-1">
 <title>Admin: All Books</title>
 <%@include file="allCSS.jsp"%>
+<style>
+body {
+	background-color: #f0f2f2;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+}
+
+.container {
+	flex-grow: 1;
+}
+
+/* Additional CSS for table and footer */
+.table-striped {
+	border: 1px solid #ddd;
+	border-radius: 10px;
+}
+
+.table thead th {
+	font-weight: bold;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.table tbody td {
+	text-align: center;
+	vertical-align: middle;
+}
+
+.table tbody tr:hover {
+	background-color: #f1f1f1;
+}
+
+}
+
+.footer {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	text-align: center;
+	background-color: #303f9f;
+}
+
+h3.text-center.mt-4 {
+	font-family: 'Montserrat', sans-serif;
+	font-size: 2rem;
+	color: #303f9f;
+	text-shadow: 1px 1px 2px #aaa;
+	letter-spacing: 1px;
+	font-weight: bold;
+}
+</style>
 </head>
 <body>
 	<%@include file="navbar.jsp"%>
-	
+
 	<c:if test="${empty userobj}">
 		<c:redirect url="../login.jsp" />
 	</c:if>
-	
-	<h3 class="text-center">Hello Admin</h3>
+
+	<h3 class="text-center mt-4">
+		<b>All Books</b>
+	</h3>
 
 	<c:if test="${not empty succMsg }">
 		<h5 class="text-center text-success">${succMsg }</h5>
@@ -33,7 +90,7 @@
 		<c:remove var="failedMsg" scope="session" />
 	</c:if>
 
-	<table class="table table-striped">
+	<table class="table table-striped table-hover">
 		<thead class="bg-primary text-white">
 			<tr>
 				<th scope="col">ID</th>
@@ -65,8 +122,8 @@
 					class="btn btn-sm btn-primary"><i
 						class="fa-solid fa-pen-to-square"></i> Edit</a> <a
 					href="../delete?id=<%=b.getBookID()%>"
-					class="btn btn-sm btn-danger"><i class="fa-solid fa-trash-can"></i> Delete</a>
-				</td>
+					class="btn btn-sm btn-danger"><i class="fa-solid fa-trash-can"></i>
+						Delete</a></td>
 			</tr>
 			<%
 			}

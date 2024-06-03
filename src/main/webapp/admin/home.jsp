@@ -5,11 +5,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-
 <meta charset="ISO-8859-1">
 <title>Admin: Home</title>
 <%@include file="allCSS.jsp"%>
 <style type="text/css">
+  body {
+        background-color: #f8f9fa;
+    }
 a {
 	text-decoration: none;
 	color: black;
@@ -19,8 +21,34 @@ a:hover {
 	text-decoration: none;
 	color: black;
 }
-</style>
+  .card {
+        border: none;
+        border-radius: 8px;
+        transition: transform 0.3s ease;
+        box-shadow: 0 6px 10px rgba(0, 0, 0, 0.4);
+    }
+    .card:hover {
+        transform: scale(1.05);
+    }
+    .card-body i {
+        margin-bottom: 15px;
+         margin-top: 15px
+    }
+/* Sticky footer styles */
+.footer {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	background-color: #303f9f;
+	color: white;
+	padding: 10px 0;
+}
 
+/* Adjust footer text style */
+.footer h5 {
+	margin: 0;
+}
+</style>
 </head>
 <body>
 	<%@include file="navbar.jsp"%>
@@ -29,7 +57,7 @@ a:hover {
 		<c:redirect url="../login.jsp" />
 	</c:if>
 
-	<div class="container">
+	<div class="container mt-5">
 		<div class="row p-5">
 			<div class="col-md-3">
 				<a href="add_books.jsp">
