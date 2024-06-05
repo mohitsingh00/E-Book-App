@@ -18,18 +18,47 @@
 	width: 100%;
 	background-size: cover;
 	background-repeat: no-repeat;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	color: white;
+	align-items: center;
+	justify-content: center;
+	position: relative;
 }
 
-.card:hover .card-body {
-	background-color: #f7f7f7;
+.card {
+	background-color: #fff;
+	border-radius: 5px;
+	box-shadow: 0 6px 9px rgba(0, 0, 0, 0.1);
+	overflow: hidden;
+	transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.card:hover {
+	transform: translateY(-5px);
+	box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+	transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card-body {
+	padding: 20px;
+}
+
+.card-body img {
+	width: 100%;
+	height: auto;
 }
 
 .heading {
-	font-size: 60px;
+	font-family: Georgia, serif;
+	font-size: 70px;
 	position: absolute; /* Position the text absolutely */
 	top: 29%; /* Place the text vertically centered */
 	left: 46%; /* Place the text horizontally centered */
 	transform: translate(-50%, -50%); /* Center the text precisely */
+	text-align: center;
 	white-space: nowrap;
 }
 </style>
@@ -49,8 +78,10 @@
 
 	<!-- Start Recent Book -->
 	<div class="container">
-		<h3 class="text-center">Recent Book</h3>
-		<div class="row">
+		<h3 class="text-center mt-4">
+			<b>Recent Book</b>
+		</h3>
+		<div class="row mt-3">
 			<%
 			BooksDAOImpl dao2 = new BooksDAOImpl(DBConnect.getCon());
 			List<Books> list2 = dao2.getRecentBook();
@@ -61,7 +92,9 @@
 					<div class="card-body text-center">
 						<img alt="" src="books/<%=b.getPhotoName()%>"
 							style="width: 150px; height: 200px" class="img-thumblin">
-						<p><%=b.getBookName()%></p>
+						<p class="mt-1">
+							<b><%=b.getBookName()%></b>
+						</p>
 						<p><%=b.getAuthor()%></p>
 						<p>
 							<%
@@ -115,7 +148,7 @@
 			%>
 		</div>
 
-		<div class="text-center mt-2">
+		<div class="text-center mt-3">
 			<a href="all_recent_book.jsp" class="btn btn-danger btn-sm">View
 				All</a>
 		</div>
@@ -125,9 +158,11 @@
 	<hr>
 
 	<!-- Start New Book -->
-	<div class="container">
-		<h3 class="text-center">New Book</h3>
-		<div class="row">
+	<div class="container mt-2">
+		<h3 class="text-center">
+			<b>New Book</b>
+		</h3>
+		<div class="row mt-3">
 			<%
 			BooksDAOImpl dao = new BooksDAOImpl(DBConnect.getCon());
 			List<Books> list = dao.getNewBook();
@@ -138,7 +173,9 @@
 					<div class="card-body text-center">
 						<img alt="" src="books/<%=b.getPhotoName()%>"
 							style="width: 150px; height: 200px" class="img-thumblin">
-						<p><%=b.getBookName()%></p>
+						<p class="mt-1">
+							<b><%=b.getBookName()%></b>
+						</p>
 						<p><%=b.getAuthor()%></p>
 						<p>
 							Categories:
@@ -171,7 +208,7 @@
 			}
 			%>
 		</div>
-		<div class="text-center mt-2">
+		<div class="text-center mt-3">
 			<a href="all_new_book.jsp" class="btn btn-danger btn-sm">View All</a>
 		</div>
 	</div>
@@ -180,9 +217,11 @@
 	<hr>
 
 	<!-- Start Old Book -->
-	<div class="container">
-		<h3 class="text-center">Old Book</h3>
-		<div class="row">
+	<div class="container mt-2">
+		<h3 class="text-center">
+			<b>Old Book</b>
+		</h3>
+		<div class="row mt-3">
 			<%
 			BooksDAOImpl dao3 = new BooksDAOImpl(DBConnect.getCon());
 			List<Books> list3 = dao3.getOldBook();
@@ -193,7 +232,9 @@
 					<div class="card-body text-center">
 						<img alt="" src="books/<%=b.getPhotoName()%>"
 							style="width: 150px; height: 200px" class="img-thumblin">
-						<p><%=b.getBookName()%></p>
+						<p class="mt-1">
+							<b><%=b.getBookName()%></b>
+						</p>
 						<p><%=b.getAuthor()%></p>
 						<p>
 							Categories:
@@ -212,12 +253,14 @@
 			}
 			%>
 		</div>
-		<div class="text-center mt-2">
+		<div class="text-center mt-3">
 			<a href="all_old_book.jsp" class="btn btn-danger btn-sm">View All</a>
 		</div>
 	</div>
 	<!-- End Old Book -->
 
-	<%@include file="all_component/footer.jsp"%>
+	<div style="margin-top: 30px"><%@include
+			file="all_component/footer.jsp"%></div>
+
 </body>
 </html>

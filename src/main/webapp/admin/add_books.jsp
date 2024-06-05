@@ -13,7 +13,7 @@ body {
 .card {
 	margin-top: 30px;
 	border-radius: 15px; /* Add some border radius */
-	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
 }
 
 .card-body {
@@ -22,11 +22,12 @@ body {
 
 .form-group label {
 	font-weight: bold; /* Make labels bold */
+	 margin-bottom: 5px;
 }
 
 .form-control {
 	border-radius: 10px; /* Round corners of input fields */
-	margin-bottom: 15px; /* Add spacing between each field */
+	margin-bottom: 19px; /* Add spacing between each field */
 }
 
 .form-group select {
@@ -62,7 +63,7 @@ body {
 			<div class="col-md-6">
 				<div class="card">
 					<div class="card-body">
-						<h4 class="text-center mb-4"><b>Add Books</b></h4>
+						<h3 class="text-center text-primary mb-4"><b>Add Books</b></h3>
 
 						<c:if test="${not empty succMsg }">
 							<p class="text-center text-success">${succMsg }</p>

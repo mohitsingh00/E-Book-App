@@ -16,29 +16,58 @@
 <%@include file="all_component/allCSS.jsp"%>
 
 <style type="text/css">
-.card:hover .card-body {
-	background-color: #f7f7f7;
+.card {
+	background-color: #fff;
+	border-radius: 5px;
+	box-shadow: 0 6px 9px rgba(0, 0, 0, 0.1);
+	overflow: hidden;
+	transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+.card:hover {
+	transform: translateY(-5px);
+	box-shadow: 0 9px 18px rgba(0, 0, 0, 0.2);
+	transition: transform 0.3s, box-shadow 0.3s;
+}
+.card-body {
+    padding: 20px;
+}
+.card-body img {
+	width: 100%;
+	height: auto;
 }
 
 #toast {
 	min-width: 300px;
+	max-width: 500px;
 	position: fixed;
 	bottom: 30px;
 	left: 50%;
-	margin-left: -125px;
-	background: #333;
-	padding: 10px;
+	transform: translateX(-50%);
+	background: rgba(0, 0, 0, 0.8);
+	padding: 15px 20px;
 	color: white;
 	text-align: center;
 	z-index: 1;
 	font-size: 18px;
+	border-radius: 10px;
+	display: flex;
+	align-items: center;
+	box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.3);
 	visibility: hidden;
-	box-shadow: 0px 0px 100px #000;
+	opacity: 0;
+	transition: visibility 0s, opacity 0.5s ease-in-out;
 }
+
 
 #toast.display {
 	visibility: visible;
-	animation: fadeIn 0.5, fadeOut 0.5s 2.5s;
+	opacity: 1;
+	transition: opacity 0.5s ease-in-out;
+}
+
+#toast .toast-icon {
+	margin-right: 10px;
+	font-size: 20px;
 }
 
 @
@@ -72,19 +101,19 @@ to {
 
 	<c:if test="${not empty addCart}">
 		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-		<div id="toast">${addCart}</div>
+		<div id="toast"><i class="fa fa-check-circle toast-icon"></i>${addCart}</div>
 
 		<script type="text/javascript">
 		
 		function showToast(content)
 		{
 		    $('#toast').addClass("display");
-		    $('#toast').html(content);
+		    $('#toast').html('<i class="fa fa-check-circle toast-icon"></i>' + content);
 		    setTimeout(()=>{
 		        $("#toast").removeClass("display");
 		    },2000)
 		}	
-		showToast();
+		showToast("${addCart}");
         </script>
 		<c:remove var="addCart" scope="session" />
 	</c:if>
@@ -101,8 +130,10 @@ to {
 				<div class="card mt-3">
 					<div class="card-body text-center">
 						<img alt="" src="books/<%=b.getPhotoName()%>"
-							style="width: 120px; height: 170px" class="img-thumblin">
-						<p><%=b.getBookName()%></p>
+							style="width: 140px; height: 180px" class="img-thumblin">
+						<p class="mt-1">
+							<b><%=b.getBookName()%></b>
+						</p>
 						<p><%=b.getAuthor()%></p>
 						<p>
 							Categories:

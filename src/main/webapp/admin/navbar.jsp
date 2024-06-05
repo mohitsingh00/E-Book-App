@@ -1,6 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@page isELIgnored="false"%>
-
 <!-- Top Bar -->
 <div class="container-fluid"
 	style="height: 10px; background-color: #303f9f; font-family: sans-serif;"></div>
@@ -10,23 +9,25 @@
 	<div class="row align-items-center">
 		<div class="col-md-3 text-success">
 			<h3>
-				<i class="fa-solid fa-book fa-1x"></i> <b>EBOOK</b>
+				<i class="fa-solid fa-book fa-1x"></i> <b>E-BOOK</b>
 			</h3>
 		</div>
 
 		<div class="col-md-6"></div>
 		<div class="col-md-3 text-end">
 			<c:if test="${not empty userobj}">
-				<a class="btn btn-success"><i class="fa-solid fa-circle-user"></i>
+				<a class="btn btn-success me-1"><i class="fa-solid fa-circle-user"></i>
 					${userobj.name}</a>
+					
 				<button id="logoutBtn" class="btn btn-primary"
 					data-bs-toggle="modal" data-bs-target="#logoutModal">
 					<i class="fa-solid fa-right-to-bracket"></i> Logout
 				</button>
 			</c:if>
 			<c:if test="${empty userobj}">
-				<a href="../login.jsp" class="btn btn-success"><i
+				<a href="../login.jsp" class="btn btn-success me-2"><i
 					class="fa-solid fa-right-to-bracket"></i> Login</a>
+					
 				<a href="../register.jsp" class="btn btn-primary"><i
 					class="fa-solid fa-user-plus"></i> Register</a>
 			</c:if>
@@ -74,3 +75,21 @@
 		</div>
 	</div>
 </nav>
+<style>
+.bg-custom {
+	background-color: #303f9f;
+}
+
+.navbar .nav-item:hover .nav-link {
+	background-color: white;
+	color: #303f9f;
+}
+
+.btn-success, .btn-primary, .btn-secondary {
+	border-radius: 5px;
+}
+
+.modal-content {
+	border-radius: 0.5rem;
+}
+</style>

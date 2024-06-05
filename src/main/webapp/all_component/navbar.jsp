@@ -1,16 +1,16 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@page isELIgnored="false"%>
 <div class="container-fluid"
-	style="height: 10px; background-color: #303f9f"></div>
+	style="height: 10px; background-color: #303f9f; font-family: sans-serif;"></div>
 <div class="container-fluid  p-3 bg-light">
 	<div class="row align-items-center">
 		<div class="col-md-3 text-success">
 			<h3>
-				<i class="fa-solid fa-book"></i> Ebooks
+				<i class="fa-solid fa-book"></i><b> E-BOOK</b>
 			</h3>
 		</div>
 		<div class="col-md-6 d-flex justify-content-center">
-			<form class="d-flex" action="search.jsp" method="post">
+			<form class="d-flex search-form" action="search.jsp" method="post">
 				<input class="form-control me-2" type="search" name="ch" placeholder="Search"
 					aria-label="Search" style="width: 220px;">
 				<button class="btn btn-primary" type="submit">Search</button>
@@ -70,13 +70,13 @@
 			<form class="d-flex">
 				<c:if test="${not empty userobj}">
 					<div style="margin-right: 10px;">
-						<a href="setting.jsp" class="btn btn-light">
+						<a href="setting.jsp" class="btn btn-light btn-custom">
 							<i class="fa-solid fa-gear"></i> Settings
 						</a>
 					</div>
 				</c:if>
 				<div>
-					<a href="contact.jsp" class="btn btn-light">
+					<a href="contact.jsp" class="btn btn-light btn-custom">
 						<i class="fa-solid fa-square-phone"></i> Contact Us
 					</a>
 				</div>

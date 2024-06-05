@@ -11,8 +11,24 @@
 <title>All Old Books</title>
 <%@include file="all_component/allCSS.jsp"%>
 <style type="text/css">
-.card:hover .card-body {
-	background-color: #f7f7f7;
+.card {
+	background-color: #fff;
+	border-radius: 5px;
+	box-shadow: 0 6px 9px rgba(0, 0, 0, 0.1);
+	overflow: hidden;
+	transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+.card:hover {
+	transform: translateY(-5px);
+	box-shadow: 0 9px 18px rgba(0, 0, 0, 0.2);
+	transition: transform 0.3s, box-shadow 0.3s;
+}
+.card-body {
+    padding: 20px;
+}
+.card-body img {
+	width: 100%;
+	height: auto;
 }
 </style>
 </head>
@@ -29,8 +45,10 @@
 				<div class="card mt-3">
 					<div class="card-body text-center">
 						<img alt="" src="books/<%=b.getPhotoName()%>"
-							style="width: 120px; height: 170px" class="img-thumblin">
-						<p><%=b.getBookName()%></p>
+							style="width: 140px; height: 190px" class="img-thumblin">
+						<p class="mt-1">
+							<b><%=b.getBookName()%></b>
+						</p>
 						<p><%=b.getAuthor()%></p>
 						<p>
 							Categories:

@@ -8,7 +8,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>View Details</title>
 <%@include file="all_component/allCSS.jsp"%>
 <style>
 body {
@@ -20,8 +20,36 @@ body {
 	min-height: 100vh;
 }
 
-.container {
-	flex: 1;
+.card {
+	background: #fff;
+	border-radius: 5px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+	padding: 15px;
+	margin-bottom: 20px;
+	transition: transform 0.3s;
+}
+
+.card-container {
+	display: flex;
+	justify-content: space-between;
+}
+
+.card {
+	width: calc(50% - 10px); 
+	margin-bottom: 20px;
+}
+
+@media ( max-width : 768px) {
+	.card {
+		width: 100%;
+	}
+}
+
+.book-image {
+	height: 150px;
+	width: 110px;
+	object-fit: cover;
+	margin-bottom: 20px;
 }
 
 footer {
@@ -40,23 +68,24 @@ footer {
 	BooksDAOImpl dao = new BooksDAOImpl(DBConnect.getCon());
 	Books b = dao.getBooksByID(bid);
 	%>
-	<div class="container p-3">
+	<div class="container mt-5">
 		<div class="row">
-			<div class="col-md-6 text-center p-5 border bg-white">
-				<img src="books/<%=b.getPhotoName()%>"
-					style="height: 150px; width: 110px"> <br>
-				<h4 class="mt-3">
-					Book Name: <span class="text-success"><%=b.getBookName()%></span>
-				</h4>
-				<h4>
-					Author Name: <span class="text-success"><%=b.getAuthor()%></span>
-				</h4>
-				<h4>
-					Category: <span class="text-success"><%=b.getBookCategory()%></span>
-				</h4>
+			<div class="col-md-6 text-center card mb-4 mr-md-4">
+				<div class="card-content mt-3">
+					<img src="books/<%=b.getPhotoName()%>" alt="<%=b.getBookName()%>"
+						class="book-image">
+					<h4>
+						Book Name: <span class="text-success"><%=b.getBookName()%></span>
+					</h4>
+					<h4>
+						Author Name: <span class="text-success"><%=b.getAuthor()%></span>
+					</h4>
+					<h4>
+						Category: <span class="text-success"><%=b.getBookCategory()%></span>
+					</h4>
+				</div>
 			</div>
-
-			<div class="col-md-6 text-center p-5 border bg-white">
+			<div class="col-md-6 text-center card mb-4">
 				<h2><%=b.getBookName()%></h2>
 
 				<%
@@ -69,7 +98,7 @@ footer {
 				<%
 				}
 				%>
-
+				<br>
 				<div class="row">
 					<div class="col-md-4 text-danger text-center p-2">
 						<i class="fa-solid fa-money-bill-wave fa-2x"></i>

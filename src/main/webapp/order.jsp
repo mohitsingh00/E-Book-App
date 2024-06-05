@@ -13,16 +13,41 @@
 <meta charset="ISO-8859-1">
 <title>Order Books</title>
 <%@include file="all_component/allCSS.jsp"%>
+<style>
+.container {
+	width: 100%; /* Ensure the container takes up most of the width */
+	max-width: 1500px; /* Maximum width for large screens */
+	margin: 0 auto; /* Center the container */
+}
+
+.card-custom {
+	width: 100%;
+}
+
+.table {
+	margin: 20px 0;
+}
+.table tr {
+	text-align: center;
+}
+.table tbody tr:hover {
+	background-color: #f1f1f1;
+}
+</style>
 </head>
 <body style="background-color: #f0f2f2">
 	<c:if test="${empty userobj}">
 		<c:redirect url="login.jsp"></c:redirect>
 	</c:if>
 	<%@include file="all_component/navbar.jsp"%>
-	<div class="container mt-3">
-		<h3 class="text-center text-primary">Your Order</h3>
-		<table class="table table-striped mt-3">
-			<thead class="bg-primary text-white">
+	<div class="container mt-5">
+		<div class="card shadow mt-4">
+			<div class="card-header bg-primary text-white text-center">
+				<h4>All Orders</h4>
+			</div>
+			<div class="card-body">
+				<table class="table table-hover mt-3">
+					<thead>
 				<tr>
 					<th scope="col">Order Id</th>
 					<th scope="col">Name</th>
@@ -52,6 +77,7 @@
 				%>
 			</tbody>
 		</table>
+		</div></div>
 	</div>
 </body>
 </html>

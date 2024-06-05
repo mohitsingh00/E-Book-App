@@ -43,7 +43,7 @@ public class CartServlet extends HttpServlet{
 			
 			if(f)
 			{
-				session.setAttribute("addCart", "Books Added to Cart");
+				session.setAttribute("addCart", "Book Added to Cart");
 				resp.sendRedirect("all_new_book.jsp");
 			}
 			else

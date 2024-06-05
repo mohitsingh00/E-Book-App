@@ -24,6 +24,56 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
 input[type=number] {
 	-moz-appearance: textfield;
 }
+
+body {
+	background-color: #f0f1f2;
+}
+
+.card {
+	border: none;
+	border-radius: 10px;
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.card-body {
+	padding: 30px;
+}
+
+.card-body h3 {
+	margin-bottom: 30px;
+	text-align: center;
+	color: #303f9f;
+}
+
+.table th, .table td {
+	vertical-align: middle;
+}
+
+.table .btn-danger {
+	background-color: #ff4d4d;
+	border: none;
+	border-radius: 5px;
+	padding: 5px 10px;
+	font-size: 0.9rem;
+	transition: background-color 0.3s ease;
+}
+
+.table .btn-danger:hover {
+	background-color: #e60000;
+}
+
+.form-label {
+	font-weight: bold;
+	color: #333;
+}
+
+.text-center {
+	text-align: center;
+}
+
+.btn-warning {
+	color: white;
+}
 </style>
 </head>
 <body style="background-color: #f0f1f2;">
@@ -46,7 +96,7 @@ input[type=number] {
 	<div class="container">
 		<div class="row p-4">
 			<div class="col-md-6">
-				<div class="card bg-white">
+				<div class="card">
 					<div class="card-body">
 						<h3 class="text-center text-success">Your Selected Items</h3>
 						<table class="table table-striped">
